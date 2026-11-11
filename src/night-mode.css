@@ -1,0 +1,166 @@
+/* Daylight parchment / night-time forest. This release opens in Night.
+   Native light-dark() keeps colour pairs coherent without JavaScript. */
+:root {
+  color-scheme: dark;
+  --paper: light-dark(#f7f5ed, #151d19);
+  --white: light-dark(#fffef9, #1c2620);
+  --sidebar: light-dark(#efeee5, #111a15);
+  --ink: light-dark(#253b32, #e6e4d8);
+  --text: light-dark(#3a443f, #d0d6c8);
+  --muted: light-dark(#5f6b57, #a5b09f);
+  --line: light-dark(#dcded2, #394539);
+  --green: light-dark(#3c5744, #b4c69c);
+  --lime: light-dark(#c6d48c, #adbc80);
+  --bronze: light-dark(#9e8152, #bca377);
+  --bronze-light: light-dark(#c6ad7d, #d1b786);
+  --focus: light-dark(#658143, #c9d79b);
+  --soft-fill: light-dark(#edf0e3, #253025);
+  --panel-fill: light-dark(#eef0e466, #1c2720);
+  --shadow: 0 14px 55px light-dark(#1e372119, #00000055);
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+html { background: var(--paper); }
+body { background: var(--paper); }
+::selection { color: var(--ink); background: light-dark(#dbe4c3, #425539); }
+:is(a,button,input,select,summary):focus-visible { outline-color: var(--focus); }
+.inline-search:focus-within { outline:2px solid var(--focus); outline-offset:3px; }
+.search-dialog-head input:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
+input::placeholder { color:var(--muted); opacity:1; }
+
+/* One native control: keyboard, touch, zoom, and screen-reader behaviour are
+   supplied by the platform. No theme-switch animation over a reading page. */
+.theme-control { display:inline-flex; align-items:center; flex-shrink:0; }
+.theme-control select {
+  width:100px; min-height:44px; padding:8px 24px 8px 11px;
+  background:var(--white); border:1px solid var(--line); color:var(--text);
+  font-size:12px; line-height:1.5;
+}
+.top-links { gap:16px; }
+.topbar { background:var(--paper); box-shadow:none; }
+.search-trigger { min-width:0; }
+.search-trigger>span { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sidebar { background:linear-gradient(165deg,light-dark(#f0efdf,#141e17),light-dark(#e9eddf,#111a15)); }
+.sidebar-block { border-color:var(--line); }
+.nav-item { color:var(--muted); }
+.nav-item:hover { background:var(--soft-fill); color:var(--ink); }
+.saved-count { background:var(--soft-fill); color:var(--text); }
+.sidebar-caption,.sidebar-block a,.sidebar-block a span,.sidebar-bottom a,.sidebar-bottom p,
+.page-kicker,.eyebrow,.results-meta,.results-meta span:first-child,.card-copy>p,.boss-tags,
+.guide-row span,.group-heading>span,.provenance dt,.provenance dd,.fine-print,.reader-byline,
+.toc a,.reader-layout .toc a,.library-row small,.search-hint,.search-label,.search-result small,
+.result-type,.search-footer,.footer,.search-trigger,.breadcrumb,.filter-chip,.completion-check,
+.reader-directory,.reader-directory>span,.approach-controls,.pathway-heading .eyebrow,
+.boss-section .section-heading .eyebrow { color:var(--muted); }
+.search-trigger kbd { color:var(--muted); border-color:var(--line); }
+.search-dialog-head label,.search-no-results { color:var(--muted); }
+.breadcrumb a,.text-link,.toc a:hover,.prose a,.search-footer a { color:var(--theme-accent); }
+.page-intro p,.boss-hero p,.reference-card p,.prose p,.prose li { color:var(--text); }
+.prose strong { color:var(--ink); }
+.button,select,dialog { border-color:var(--line); }
+.button:hover,.reference-link:hover,.search-result:hover,.search-result:focus,
+.gear-links a:hover,.guide-disclosure>summary:hover { background:var(--soft-fill); border-color:var(--theme-line); }
+select { color:var(--text); }
+.skip { background:light-dark(#253b32,#e6e4d8); color:light-dark(#fffef9,#151d19); }
+.topbar .motion-toggle:hover { background:var(--soft-fill); border-color:var(--line); }
+.motion-toggle { color:var(--muted); border-color:var(--line); }
+.topbar .motion-toggle[aria-pressed="true"] { color:var(--muted); }
+
+/* A warning should be readable, without becoming a second hero. */
+.notice { background:light-dark(#ececd8,#2a2a1e); border-color:light-dark(#d8d4b8,#514b32); color:light-dark(#796443,#d2bc8b); }
+.notice p { color:light-dark(#697151,#c1c5a9); }
+.notice strong,.notice a { color:light-dark(#675435,#dfc698); }
+.notice a { text-decoration:underline; text-underline-offset:3px; }
+.filter-chip:hover,.filter-chip.selected { background:var(--theme-pale); color:var(--theme-accent); }
+.filter-chip.selected { border-color:var(--theme-line); }
+.level { color:light-dark(#536b3e,#b6c99a); }
+.level.advanced { color:light-dark(#866144,#d4b391); }
+.level.intermediate { color:light-dark(#53697a,#aac3d3); }
+.boss-hero .boss-tags { color:var(--text); }
+.save-button { background:var(--white); }
+.save-button:hover,.save-button[aria-pressed=true] { color:var(--theme-accent); background:var(--theme-pale); }
+.save-button[aria-pressed=true] svg { fill:var(--theme-pale); }
+.guide-row,.library-row { border-color:var(--line); }
+.reference-card .button { background:var(--white); }
+.compact-wiki { background:var(--theme-pale); border-color:var(--theme-line); }
+.compact-wiki .wiki-symbol,.wiki-symbol { color:var(--theme-accent); }
+
+/* Remove the extra frames, fake file tabs and score ticks. The original rune
+   drawings and distinct encounter palettes already identify each destination. */
+.pathway { box-shadow:none; }
+.pathway::before { content:none; }
+.pathway:not([open]) { background:light-dark(#edf0df,#222e22); border-color:light-dark(#bdccaa,#49583b); }
+.pathway-intermediate:not([open]) { background:light-dark(#f1e8d3,#30291e); border-color:light-dark(#d2be90,#5c4d32); }
+.pathway-advanced:not([open]) { background:light-dark(#eae3ed,#2a2431); border-color:light-dark(#c4b6cd,#51425d); }
+.pathway:not([open]) .path-title { color:light-dark(#425b39,#bfd0ac); }
+.pathway-intermediate:not([open]) .path-title { color:light-dark(#755d37,#dcc394); }
+.pathway-advanced:not([open]) .path-title { color:light-dark(#6e537e,#ccb7df); }
+.pathway:not([open]) .path-hint { color:light-dark(#68725a,#aab79e); }
+.pathway-intermediate:not([open]) .path-hint { color:light-dark(#6a5c45,#bcaf96); }
+.pathway-advanced:not([open]) .path-hint { color:light-dark(#65566e,#b7a8c3); }
+.path-toggle { color:light-dark(#8c7953,#c6b183); }
+.pathway[open] { box-shadow:none; }
+.pathway:not([open]) .stone-face { fill:light-dark(#e2e3cd,#36442f); stroke:light-dark(#a1aa84,#81916a); }
+.pathway-intermediate:not([open]) .stone-face { fill:light-dark(#e1dfc7,#443b2b); }
+.pathway-advanced:not([open]) .stone-face { fill:light-dark(#ddd9ce,#3e3448); }
+.pathway:not([open]) .stone-edge { stroke:light-dark(#c1c4a5,#647553); }
+.pathway:not([open]) .stone-shadow { fill:light-dark(#d5d4b8,#0d1510); }
+.pathway:not([open]) .rune-glyph { stroke:light-dark(#687f50,#b0c68e); filter:none; }
+.pathway-intermediate:not([open]) .rune-glyph { stroke:light-dark(#877347,#d1b77e); }
+.pathway-advanced:not([open]) .rune-glyph { stroke:light-dark(#82708b,#bfa3d3); }
+.pathway:not([open]) .rune-orbit { stroke:light-dark(#b0b395,#6f7f5b); }
+.pathway:not([open]) .rune-stars { stroke:light-dark(#a78d58,#c0a366); }
+.pathway summary { min-height:250px; }
+.catalog-number { letter-spacing:0; line-height:1.6; }
+.card-top { min-height:34px; gap:10px; }
+.boss-hero-art::after { content:none; }
+.reader-nearby>a { padding-inline:15px; }
+.reader-nearby svg { right:14px; }
+
+/* Shared reading surfaces use neutral colours, not encounter hues. Preserve all
+   imported text, tables, ability icons, media and native disclosure semantics. */
+.guide-content { color:var(--text); }
+.guide-content a { color:light-dark(#506b3e,#bdd49c); }
+.guide-content .source-media { color:var(--text); background:var(--panel-fill); border-color:var(--line); }
+.reading-note,.ability { background:var(--soft-fill); color:var(--text); border-color:var(--line); }
+.attribution p { color:var(--muted); }
+.guide-content .admonition,.guide-content details,.guide-content .embed-rich { background:var(--panel-fill); }
+.guide-content .admonition-title,.guide-content details>summary,
+.guide-content .tabbed-labels label,.guide-content .source-tab-label { background:var(--soft-fill); color:var(--ink); }
+.guide-content th { background:var(--soft-fill); color:var(--ink); }
+.guide-content pre { background:var(--panel-fill); border:1px solid var(--line); padding:12px; border-radius:3px; }
+.guide-content code { color:inherit; }
+.gear-links .guide-content a:hover { background:var(--soft-fill); }
+.guide-disclosure[open]>summary { background:var(--theme-pale); }
+.disclosure-panel { background:light-dark(#fffef966,#18221b); }
+progress,progress::-webkit-progress-bar { background:var(--line); }
+progress::-webkit-progress-value { background:var(--theme-accent); }
+progress::-moz-progress-bar { background:var(--theme-accent); }
+.completion-check input { accent-color:var(--theme-accent); }
+.search-hint { border-color:var(--line); }
+.close-search { color:var(--text); }
+#toast { background:light-dark(#2f4835,#d7dfc3); color:light-dark(#f0f3e5,#19241b); }
+
+@media(max-width:980px) { .top-links { gap:9px; } }
+@media(max-width:760px) {
+  .topbar { gap:9px; }
+  .topbar .top-links { gap:4px; }
+  .theme-control select { width:86px; font-size:12px; padding-inline:8px 19px; }
+  .pathway summary { min-height:126px; }
+  .top-links>a { min-width:32px; min-height:44px; justify-content:center; }
+}
+@media(max-width:359px) {
+  .topbar { gap:5px; padding-inline:10px; }
+  .theme-control select { width:78px; font-size:11px; }
+  .topbar .motion-toggle { min-width:38px; width:38px; }
+  .search-trigger { gap:5px; }
+}
+@media(forced-colors:active) {
+  .theme-control select,.filter-chip.selected,.pathway,.boss-card,.style-choice.selected { border:1px solid ButtonText; }
+  :is(a,button,input,select,summary):focus-visible { outline-color:Highlight; }
+}
+@media print {
+  :root,:root[data-theme] { color-scheme:light; }
+  .theme-control { display:none!important; }
+  .guide-content pre { white-space:pre-wrap; }
+}
