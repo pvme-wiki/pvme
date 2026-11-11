@@ -1,0 +1,24 @@
+{
+  "name": "pvme-platform",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node scripts/build-fullstack.mjs",
+    "test": "node --test scripts/*.test.mjs server/tests/*.test.mjs",
+    "test:theme": "node scripts/test_night_mode.mjs",
+    "db:migrate": "node server/manage.mjs migrate",
+    "db:seed": "node server/manage.mjs seed",
+    "verify": "npm test && npm --prefix editor test && npm run test:theme",
+    "dev": "node scripts/dev-server.mjs"
+  },
+  "dependencies": {
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14"
+  }
+}

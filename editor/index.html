@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Edit PvME guide text, save drafts, and send changes for moderator review.">
+  <title>PvME · Guide editor</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
+  <link rel="preload" href="./assets/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="./src/theme-init.js"></script>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="app"><main class="boot"><span class="boot-rune" aria-hidden="true">◇</span><h1>Opening the guide editor</h1><p>Loading the guides.</p></main></div>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="dialog"></dialog>
+  <script type="module" src="./src/app.mjs"></script>
+  <noscript><p class="fatal">The guide editor needs JavaScript. You can still read the guides on the main site.</p></noscript>
+</body>
+</html>
