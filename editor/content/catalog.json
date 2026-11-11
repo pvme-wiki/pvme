@@ -1,0 +1,3908 @@
+[
+  {
+    "id": "pvme-guides--afk--pvme-alt1-setup",
+    "title": "PVME Alt1 Setup",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--pvme-alt1-setup.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 480,
+      "editableBlocks": 480,
+      "preservedBlocks": 0
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-arch-glacor",
+    "title": "AFK Arch Glacor",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-arch-glacor.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 25,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-blood-reavers",
+    "title": "AFK Blood Reavers",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-blood-reavers.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 43,
+      "editableBlocks": 26,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-chaos-elemental",
+    "title": "AFK Chaos Elemental",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-chaos-elemental.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 31,
+      "editableBlocks": 22,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-corporeal-beast",
+    "title": "AFK Corporeal Beast",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-corporeal-beast.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 24,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-dagannoth-kings",
+    "title": "AFK Dagannoth Kings",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-dagannoth-kings.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 48,
+      "editableBlocks": 31,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-general-graardor",
+    "title": "AFK General Graardor",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-general-graardor.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 24,
+      "editableBlocks": 13,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-gregorovic",
+    "title": "AFK Gregorovic",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-gregorovic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 61,
+      "editableBlocks": 39,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-gwd1",
+    "title": "AFK GWD1",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-gwd1.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 44,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-helwyr",
+    "title": "AFK Helwyr",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-helwyr.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 64,
+      "editableBlocks": 39,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-helwyr-hardmode",
+    "title": "AFK Helwyr Hardmode",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-helwyr-hardmode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 23,
+      "editableBlocks": 13,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-hermod",
+    "title": "AFK Hermod",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-hermod.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 25,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-ivar-king-of-bones",
+    "title": "AFK Ivar King Of Bones",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-ivar-king-of-bones.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 33,
+      "editableBlocks": 22,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-kalphite-queen",
+    "title": "AFK Kalphite Queen",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-kalphite-queen.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 26,
+      "editableBlocks": 14,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-kbd",
+    "title": "AFK Kbd",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-kbd.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 24,
+      "editableBlocks": 14,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-kerapac",
+    "title": "AFK Kerapac",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-kerapac.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 20,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-kree-arra",
+    "title": "AFK Kree Arra",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-kree-arra.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 25,
+      "editableBlocks": 15,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-orikalka",
+    "title": "AFK Orikalka",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-orikalka.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 20,
+      "editableBlocks": 10,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-osseous",
+    "title": "AFK Osseous",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-osseous.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 25,
+      "editableBlocks": 15,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-overview",
+    "title": "AFK Overview",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-overview.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 68,
+      "editableBlocks": 50,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-pthentraken",
+    "title": "AFK Pthentraken",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-pthentraken.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 17,
+      "editableBlocks": 8,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-rathis",
+    "title": "AFK Rathis",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-rathis.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 23,
+      "editableBlocks": 14,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-silverquill-the-dreadhog",
+    "title": "AFK Silverquill The Dreadhog",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-silverquill-the-dreadhog.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 39,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-twin-furies",
+    "title": "AFK Twin Furies",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-twin-furies.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 36,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-vindicta",
+    "title": "AFK Vindicta",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-vindicta.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 58,
+      "editableBlocks": 37,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--afk--afk-vindicta-hardmode",
+    "title": "AFK Vindicta Hardmode",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--afk-vindicta-hardmode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 23,
+      "editableBlocks": 12,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-helwyr-hardmode",
+    "title": "Low Effort Helwyr Hardmode",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-helwyr-hardmode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 47,
+      "editableBlocks": 34,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-kerapac",
+    "title": "Low Effort Kerapac",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-kerapac.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 61,
+      "editableBlocks": 42,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-magister",
+    "title": "Low Effort Magister",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-magister.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 46,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-pthentraken",
+    "title": "Low Effort Pthentraken",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-pthentraken.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 31,
+      "editableBlocks": 18,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-raksha",
+    "title": "Low Effort Raksha",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-raksha.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 51,
+      "editableBlocks": 32,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "low-effort-rasial",
+    "title": "Low Effort Rasial",
+    "category": "Low-effort PvM",
+    "file": "low-effort-rasial.json",
+    "summary": "A full Rasial method with preserved rich requirements and gear blocks.",
+    "stats": {
+      "nodes": 286,
+      "elementNodes": 123,
+      "media": 4,
+      "textNodes": 163,
+      "links": 22,
+      "icons": 29,
+      "blocks": 25,
+      "editableBlocks": 14,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-twin-furies-hardmode",
+    "title": "Low Effort Twin Furies Hardmode",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-twin-furies-hardmode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 40,
+      "editableBlocks": 26,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--afk--low-effort-vorkath",
+    "title": "Low Effort Vorkath",
+    "category": "Lower-effort methods",
+    "file": "pvme-guides--afk--low-effort-vorkath.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 33,
+      "editableBlocks": 24,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--amascut-basic",
+    "title": "Amascut Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--amascut-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 335,
+      "editableBlocks": 294,
+      "preservedBlocks": 41
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--aod-basic",
+    "title": "Aod Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--aod-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 39,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "araxxor",
+    "title": "Araxxor Basic",
+    "category": "Boss fundamentals",
+    "file": "araxxor.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 131,
+      "editableBlocks": 100,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "arch-glacor-basic",
+    "title": "Arch Glacor Basic",
+    "category": "Boss guide",
+    "file": "arch-glacor-basic.json",
+    "summary": "Learn the five mechanics, with original presets, icons and videos.",
+    "stats": {
+      "nodes": 376,
+      "elementNodes": 166,
+      "media": 11,
+      "textNodes": 210,
+      "icons": 41,
+      "links": 15,
+      "blocks": 72,
+      "editableBlocks": 50,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--barrows-basic",
+    "title": "Barrows Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--barrows-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 42,
+      "editableBlocks": 30,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--bm-basic",
+    "title": "Bm Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--bm-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 78,
+      "editableBlocks": 66,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--chaos-elemental-basic",
+    "title": "Chaos Elemental Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--chaos-elemental-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 24,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--ed1-basic",
+    "title": "ED1 Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--ed1-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 146,
+      "editableBlocks": 105,
+      "preservedBlocks": 41
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--ed2-basic",
+    "title": "ED2 Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--ed2-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 106,
+      "editableBlocks": 72,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--ed3-basic",
+    "title": "ED3 Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--ed3-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 165,
+      "editableBlocks": 119,
+      "preservedBlocks": 46
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--ghrazi-blood-knights",
+    "title": "Ghrazi Blood Knights",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--ghrazi-blood-knights.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 175,
+      "editableBlocks": 132,
+      "preservedBlocks": 43
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--giant-mole-basic",
+    "title": "Giant Mole Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--giant-mole-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 30,
+      "editableBlocks": 21,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--gregorovic-basic",
+    "title": "Gregorovic Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--gregorovic-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 97,
+      "editableBlocks": 77,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "helwyr",
+    "title": "Helwyr Basic",
+    "category": "Boss fundamentals",
+    "file": "helwyr.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 82,
+      "editableBlocks": 63,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--kbd-basic",
+    "title": "Kbd Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--kbd-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 36,
+      "editableBlocks": 25,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "kerapac",
+    "title": "Kerapac HM Basic",
+    "category": "Boss fundamentals",
+    "file": "kerapac.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 101,
+      "editableBlocks": 82,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "nex",
+    "title": "Nex Basic",
+    "category": "Boss fundamentals",
+    "file": "nex.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 76,
+      "editableBlocks": 56,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "raksha",
+    "title": "Raksha Basic",
+    "category": "Boss fundamentals",
+    "file": "raksha.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 150,
+      "editableBlocks": 114,
+      "preservedBlocks": 36
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--rise-of-the-six-basic",
+    "title": "Rise Of The Six Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--rise-of-the-six-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 102,
+      "editableBlocks": 61,
+      "preservedBlocks": 41
+    }
+  },
+  {
+    "id": "solak",
+    "title": "Solak Basic",
+    "category": "Boss fundamentals",
+    "file": "solak.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 158,
+      "editableBlocks": 136,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "telos",
+    "title": "Telos Basic",
+    "category": "Boss fundamentals",
+    "file": "telos.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 117,
+      "editableBlocks": 93,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--twin-furies-basic",
+    "title": "Twin Furies Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--twin-furies-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 101,
+      "editableBlocks": 83,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "tzkal-zuk",
+    "title": "Tzkal Zuk Basic",
+    "category": "Boss fundamentals",
+    "file": "tzkal-zuk.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 100,
+      "editableBlocks": 81,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "vindicta",
+    "title": "Vindicta Basic",
+    "category": "Boss fundamentals",
+    "file": "vindicta.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 122,
+      "editableBlocks": 94,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-ceilings-combined",
+    "title": "Duo Ceilings Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-ceilings-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 202,
+      "editableBlocks": 182,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-gb-combined",
+    "title": "Duo GB Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-gb-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 194,
+      "editableBlocks": 166,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-pb-combined",
+    "title": "Duo PB Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-pb-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 210,
+      "editableBlocks": 186,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-scop-combined",
+    "title": "Duo Scop Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-scop-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 191,
+      "editableBlocks": 167,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-ts-combined",
+    "title": "Duo TS Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-ts-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 194,
+      "editableBlocks": 170,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--duo-vit-combined",
+    "title": "Duo Vit Combined",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--duo-vit-combined.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 224,
+      "editableBlocks": 190,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--basic-guides--vorago-basic--vorago-basic",
+    "title": "Vorago Basic",
+    "category": "Boss fundamentals",
+    "file": "pvme-guides--basic-guides--vorago-basic--vorago-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 191,
+      "editableBlocks": 167,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "zamorak",
+    "title": "Zamorak Basic",
+    "category": "Boss fundamentals",
+    "file": "zamorak.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 58,
+      "editableBlocks": 44,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--ambassador-ca",
+    "title": "Ambassador Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--ambassador-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 79,
+      "editableBlocks": 53,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--aod-ca",
+    "title": "Aod Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--aod-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 43,
+      "editableBlocks": 32,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--araxxor-ca",
+    "title": "Araxxor Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--araxxor-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 30,
+      "preservedBlocks": 7
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--beastmaster-ca",
+    "title": "Beastmaster Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--beastmaster-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 29,
+      "editableBlocks": 20,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--black-stone-dragon-ca",
+    "title": "Black Stone Dragon Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--black-stone-dragon-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 85,
+      "editableBlocks": 65,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--magister-ca",
+    "title": "Magister Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--magister-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 21,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--rasial-ca",
+    "title": "Rasial Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--rasial-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 67,
+      "editableBlocks": 45,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--seiryu-ca",
+    "title": "Seiryu Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--seiryu-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 35,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--telos-ca",
+    "title": "Telos Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--telos-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 72,
+      "editableBlocks": 54,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--vorago-ca",
+    "title": "Vorago Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--vorago-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 84,
+      "editableBlocks": 56,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--vorkath-ca",
+    "title": "Vorkath Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--vorkath-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 55,
+      "editableBlocks": 35,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--combat-achievements--zuk-ca",
+    "title": "Zuk Ca",
+    "category": "Combat achievements",
+    "file": "pvme-guides--combat-achievements--zuk-ca.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 29,
+      "editableBlocks": 18,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--dpm-advice--dpm-advice-faq",
+    "title": "DPM Advice Faq",
+    "category": "Damage & rotations",
+    "file": "pvme-guides--dpm-advice--dpm-advice-faq.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 244,
+      "editableBlocks": 216,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "dpm-advice-mage",
+    "title": "DPM Advice Mage",
+    "category": "Combat advice",
+    "file": "dpm-advice-mage.json",
+    "summary": "Magic rotations, ability sequences and advanced damage advice.",
+    "stats": {
+      "nodes": 2061,
+      "elementNodes": 942,
+      "textNodes": 1119,
+      "links": 10,
+      "icons": 575,
+      "blocks": 255,
+      "editableBlocks": 203,
+      "preservedBlocks": 52,
+      "media": 0
+    }
+  },
+  {
+    "id": "pvme-guides--dpm-advice--dpm-advice-melee",
+    "title": "DPM Advice Melee",
+    "category": "Damage & rotations",
+    "file": "pvme-guides--dpm-advice--dpm-advice-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 220,
+      "editableBlocks": 182,
+      "preservedBlocks": 38
+    }
+  },
+  {
+    "id": "pvme-guides--dpm-advice--dpm-advice-necro",
+    "title": "DPM Advice Necro",
+    "category": "Damage & rotations",
+    "file": "pvme-guides--dpm-advice--dpm-advice-necro.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 173,
+      "editableBlocks": 144,
+      "preservedBlocks": 29
+    }
+  },
+  {
+    "id": "pvme-guides--dpm-advice--dpm-advice-range",
+    "title": "DPM Advice Range",
+    "category": "Damage & rotations",
+    "file": "pvme-guides--dpm-advice--dpm-advice-range.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 338,
+      "editableBlocks": 270,
+      "preservedBlocks": 68
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--ability-bar-builder",
+    "title": "Ability Bar Builder",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--ability-bar-builder.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 19,
+      "editableBlocks": 15,
+      "preservedBlocks": 4
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--banner-builder",
+    "title": "Banner Builder",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--banner-builder.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 71,
+      "editableBlocks": 55,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--creating-afk-methods",
+    "title": "Creating AFK Methods",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--creating-afk-methods.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 39,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--forum-icon-builder",
+    "title": "Forum Icon Builder",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--forum-icon-builder.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 23,
+      "editableBlocks": 16,
+      "preservedBlocks": 7
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--guide-editor",
+    "title": "Guide Editor",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--guide-editor.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 47,
+      "editableBlocks": 36,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--icon-creation",
+    "title": "Icon Creation",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--icon-creation.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 117,
+      "editableBlocks": 97,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--map-generation",
+    "title": "Map Generation",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--map-generation.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 61,
+      "editableBlocks": 38,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--preset-maker",
+    "title": "Preset Maker",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--preset-maker.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 36,
+      "editableBlocks": 24,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--pvme-spreadsheet",
+    "title": "Pvme Spreadsheet",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--pvme-spreadsheet.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 28,
+      "preservedBlocks": 6
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--rotation-builder",
+    "title": "Rotation Builder",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--rotation-builder.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 23,
+      "editableBlocks": 19,
+      "preservedBlocks": 4
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--style-guide",
+    "title": "Style Guide",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--style-guide.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 165,
+      "editableBlocks": 129,
+      "preservedBlocks": 36
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--editor-references--templates",
+    "title": "Templates",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--editor-references--templates.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 46,
+      "editableBlocks": 33,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--github-tutorials--github-comp-tutorial",
+    "title": "Github Comp Tutorial",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--github-tutorials--github-comp-tutorial.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 255,
+      "editableBlocks": 234,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--github-tutorials--github-quick-guide",
+    "title": "Github Quick Guide",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--github-tutorials--github-quick-guide.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 16,
+      "editableBlocks": 12,
+      "preservedBlocks": 4
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--github-tutorials--github-tips-and-troubleshooting",
+    "title": "Github Tips And Troubleshooting",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--github-tutorials--github-tips-and-troubleshooting.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 87,
+      "editableBlocks": 73,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--intro-to-editing",
+    "title": "Intro To Editing",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--intro-to-editing.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 33,
+      "preservedBlocks": 8
+    }
+  },
+  {
+    "id": "pvme-guides--editor-resources--intro-to-editing-continued",
+    "title": "Intro To Editing Continued",
+    "category": "Contributing",
+    "file": "pvme-guides--editor-resources--intro-to-editing-continued.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 46,
+      "preservedBlocks": 8
+    }
+  },
+  {
+    "id": "pvme-guides--get-involved--feats",
+    "title": "Feats",
+    "category": "Get involved",
+    "file": "pvme-guides--get-involved--feats.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 43,
+      "editableBlocks": 31,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--get-involved--making-suggestions",
+    "title": "Making Suggestions",
+    "category": "Get involved",
+    "file": "pvme-guides--get-involved--making-suggestions.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 21,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--get-involved--mastery",
+    "title": "Mastery",
+    "category": "Get involved",
+    "file": "pvme-guides--get-involved--mastery.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 82,
+      "editableBlocks": 55,
+      "preservedBlocks": 27
+    }
+  },
+  {
+    "id": "pvme-guides--getting-started--early-moneymaking-ideas",
+    "title": "Early Moneymaking Ideas",
+    "category": "Getting started",
+    "file": "pvme-guides--getting-started--early-moneymaking-ideas.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 63,
+      "editableBlocks": 58,
+      "preservedBlocks": 5
+    }
+  },
+  {
+    "id": "pvme-guides--getting-started--how-to-use-pvme",
+    "title": "How To Use Pvme",
+    "category": "Getting started",
+    "file": "pvme-guides--getting-started--how-to-use-pvme.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 100,
+      "editableBlocks": 75,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "interface-guide",
+    "title": "Interface Guide",
+    "category": "Getting started",
+    "file": "interface-guide.json",
+    "summary": "A full interface setup guide with screenshots and embedded demonstrations.",
+    "stats": {
+      "nodes": 1969,
+      "elementNodes": 766,
+      "textNodes": 1203,
+      "media": 23,
+      "links": 22,
+      "icons": 88,
+      "blocks": 366,
+      "editableBlocks": 314,
+      "preservedBlocks": 52
+    }
+  },
+  {
+    "id": "pvme-guides--getting-started--noncombat-skilling-guides",
+    "title": "Noncombat Skilling Guides",
+    "category": "Getting started",
+    "file": "pvme-guides--getting-started--noncombat-skilling-guides.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 148,
+      "editableBlocks": 131,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--getting-started--quick-start",
+    "title": "Quick Start",
+    "category": "Getting started",
+    "file": "pvme-guides--getting-started--quick-start.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 45,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--invention-and-perks--invention-basics",
+    "title": "Invention Basics",
+    "category": "Invention & perks",
+    "file": "pvme-guides--invention-and-perks--invention-basics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 353,
+      "editableBlocks": 304,
+      "preservedBlocks": 49
+    }
+  },
+  {
+    "id": "pvme-guides--invention-and-perks--perk-information",
+    "title": "Perk Information",
+    "category": "Invention & perks",
+    "file": "pvme-guides--invention-and-perks--perk-information.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 28,
+      "editableBlocks": 24,
+      "preservedBlocks": 4
+    }
+  },
+  {
+    "id": "pvme-guides--invention-and-perks--perks",
+    "title": "Perks",
+    "category": "Invention & perks",
+    "file": "pvme-guides--invention-and-perks--perks.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 24,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--invention-and-perks--scavenging-farming",
+    "title": "Scavenging Farming",
+    "category": "Invention & perks",
+    "file": "pvme-guides--invention-and-perks--scavenging-farming.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 124,
+      "editableBlocks": 95,
+      "preservedBlocks": 29
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--constitution-abilities",
+    "title": "Constitution Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--constitution-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 52,
+      "editableBlocks": 33,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--defence-abilities",
+    "title": "Defence Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--defence-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 55,
+      "editableBlocks": 34,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--magic-abilities",
+    "title": "Magic Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--magic-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 88,
+      "editableBlocks": 52,
+      "preservedBlocks": 36
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--melee-abilities",
+    "title": "Melee Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--melee-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 81,
+      "editableBlocks": 47,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--necromancy-abilities",
+    "title": "Necromancy Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--necromancy-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 53,
+      "editableBlocks": 49,
+      "preservedBlocks": 4
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ability-information--ranged-abilities",
+    "title": "Ranged Abilities",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ability-information--ranged-abilities.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 69,
+      "editableBlocks": 40,
+      "preservedBlocks": 29
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--alt1",
+    "title": "Alt1",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--alt1.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 144,
+      "editableBlocks": 105,
+      "preservedBlocks": 39
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--ammo-setups",
+    "title": "Ammo Setups",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--ammo-setups.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 134,
+      "editableBlocks": 109,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--boss-revenue",
+    "title": "Boss Revenue",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--boss-revenue.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 97,
+      "editableBlocks": 63,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--eof-specs",
+    "title": "Eof Specs",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--eof-specs.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 314,
+      "editableBlocks": 285,
+      "preservedBlocks": 29
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--irl-gear",
+    "title": "Irl Gear",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--irl-gear.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 27,
+      "editableBlocks": 12,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--mechanics",
+    "title": "Mechanics",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 544,
+      "editableBlocks": 487,
+      "preservedBlocks": 57
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--mobile-pvm",
+    "title": "Mobile PvM",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--mobile-pvm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 83,
+      "editableBlocks": 66,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--pvm-spreadsheets",
+    "title": "PvM Spreadsheets",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--pvm-spreadsheets.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 4,
+      "editableBlocks": 4,
+      "preservedBlocks": 0
+    }
+  },
+  {
+    "id": "pvme-guides--miscellaneous-information--revolution-bars",
+    "title": "Revolution Bars",
+    "category": "Combat reference",
+    "file": "pvme-guides--miscellaneous-information--revolution-bars.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 72,
+      "editableBlocks": 46,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-bossing--bossing-path",
+    "title": "Bossing Path",
+    "category": "Learning to boss",
+    "file": "pvme-guides--new-to-bossing--bossing-path.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 98,
+      "editableBlocks": 59,
+      "preservedBlocks": 39
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-bossing--learning-pvm",
+    "title": "Learning PvM",
+    "category": "Learning to boss",
+    "file": "pvme-guides--new-to-bossing--learning-pvm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 164,
+      "editableBlocks": 120,
+      "preservedBlocks": 44
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-bossing--mid-game-combat",
+    "title": "Mid Game Combat",
+    "category": "Learning to boss",
+    "file": "pvme-guides--new-to-bossing--mid-game-combat.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 72,
+      "editableBlocks": 59,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-bossing--prayer-flicking",
+    "title": "Prayer Flicking",
+    "category": "Learning to boss",
+    "file": "pvme-guides--new-to-bossing--prayer-flicking.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 78,
+      "editableBlocks": 61,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-bossing--revo-to-full-manual",
+    "title": "Revo To Full Manual",
+    "category": "Learning to boss",
+    "file": "pvme-guides--new-to-bossing--revo-to-full-manual.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 139,
+      "editableBlocks": 116,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-pvm--early-game-combat",
+    "title": "Early Game Combat",
+    "category": "Combat foundations",
+    "file": "pvme-guides--new-to-pvm--early-game-combat.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 108,
+      "editableBlocks": 92,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-pvm--early-magic-upgrades",
+    "title": "Early Magic Upgrades",
+    "category": "Combat foundations",
+    "file": "pvme-guides--new-to-pvm--early-magic-upgrades.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 112,
+      "editableBlocks": 96,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-pvm--early-melee-upgrades",
+    "title": "Early Melee Upgrades",
+    "category": "Combat foundations",
+    "file": "pvme-guides--new-to-pvm--early-melee-upgrades.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 138,
+      "editableBlocks": 121,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-pvm--early-necromancy-upgrades",
+    "title": "Early Necromancy Upgrades",
+    "category": "Combat foundations",
+    "file": "pvme-guides--new-to-pvm--early-necromancy-upgrades.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 154,
+      "editableBlocks": 129,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--new-to-pvm--early-ranged-upgrades",
+    "title": "Early Ranged Upgrades",
+    "category": "Combat foundations",
+    "file": "pvme-guides--new-to-pvm--early-ranged-upgrades.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 108,
+      "editableBlocks": 93,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--one-tick-guides--basic-one-ticks",
+    "title": "Basic One Ticks",
+    "category": "One-tick guides",
+    "file": "pvme-guides--one-tick-guides--basic-one-ticks.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 69,
+      "editableBlocks": 46,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--one-tick-guides--general-tips",
+    "title": "General Tips",
+    "category": "One-tick guides",
+    "file": "pvme-guides--one-tick-guides--general-tips.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 50,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--one-tick-guides--legiones",
+    "title": "Legiones",
+    "category": "One-tick guides",
+    "file": "pvme-guides--one-tick-guides--legiones.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 27,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--one-tick-guides--rise-of-the-six",
+    "title": "Rise Of The Six",
+    "category": "One-tick guides",
+    "file": "pvme-guides--one-tick-guides--rise-of-the-six.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 24,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-2000-necromancy",
+    "title": "Amascut 1000 2000 Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-2000-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 97,
+      "editableBlocks": 58,
+      "preservedBlocks": 39
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-magic-melee-base",
+    "title": "Amascut 1000 Magic Melee Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-magic-melee-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 78,
+      "editableBlocks": 51,
+      "preservedBlocks": 27
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-magic-melee-dps",
+    "title": "Amascut 1000 Magic Melee Dps",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-magic-melee-dps.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 103,
+      "editableBlocks": 70,
+      "preservedBlocks": 33
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-ranged-melee-dps",
+    "title": "Amascut 1000 Ranged Melee Dps",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-1000-ranged-melee-dps.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 102,
+      "editableBlocks": 68,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-magic-melee-base",
+    "title": "Amascut 2000 Magic Melee Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-magic-melee-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 75,
+      "editableBlocks": 50,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-mechanics",
+    "title": "Amascut 2000 Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 253,
+      "editableBlocks": 222,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-ranged-melee-dps",
+    "title": "Amascut 2000 Ranged Melee Dps",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-2000-ranged-melee-dps.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 104,
+      "editableBlocks": 73,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--amascut--amascut-nm-mechanics",
+    "title": "Amascut Nm Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--amascut--amascut-nm-mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 104,
+      "editableBlocks": 87,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-base",
+    "title": "Mage Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 28,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-melee-base",
+    "title": "Mage Melee Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-melee-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 38,
+      "editableBlocks": 25,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-melee-minion-tank",
+    "title": "Mage Melee Minion Tank",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-melee-minion-tank.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 34,
+      "editableBlocks": 23,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-minion-tank",
+    "title": "Mage Minion Tank",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-minion-tank.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 44,
+      "editableBlocks": 30,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-range-base",
+    "title": "Mage Range Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-range-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 42,
+      "editableBlocks": 28,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-range-minion-tank",
+    "title": "Mage Range Minion Tank",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mage-range-minion-tank.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 58,
+      "editableBlocks": 43,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mechanics",
+    "title": "Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 211,
+      "editableBlocks": 131,
+      "preservedBlocks": 80
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-minion-tank",
+    "title": "Melee Minion Tank",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-minion-tank.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 25,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-ranged-base",
+    "title": "Melee Ranged Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-ranged-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 35,
+      "editableBlocks": 29,
+      "preservedBlocks": 6
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-ranged-minion-tank",
+    "title": "Melee Ranged Minion Tank",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--melee-ranged-minion-tank.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 57,
+      "editableBlocks": 41,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-base",
+    "title": "Necromancy Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 40,
+      "editableBlocks": 24,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-hamm",
+    "title": "Necromancy Hamm",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-hamm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 76,
+      "editableBlocks": 54,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-minion-tank-free",
+    "title": "Necromancy Minion Tank Free",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-7s--necromancy-minion-tank-free.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 76,
+      "editableBlocks": 52,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--4s-mechanics",
+    "title": "4s Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--4s-mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 52,
+      "preservedBlocks": 10
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-base-with-rangers",
+    "title": "Necro Base With Rangers",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-base-with-rangers.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 38,
+      "editableBlocks": 27,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-duo-trio-basic",
+    "title": "Necro Duo Trio Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-duo-trio-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 105,
+      "editableBlocks": 79,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-solo-basic",
+    "title": "Necro Solo Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--necro-solo-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 101,
+      "editableBlocks": 77,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--ranged-mt-no-prebuild",
+    "title": "Ranged MT No Prebuild",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--ranged-mt-no-prebuild.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 32,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--aod-solo-hybrid-ranged-melee",
+    "title": "Aod Solo Hybrid Ranged Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--aod-solo-hybrid-ranged-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 83,
+      "editableBlocks": 62,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--magic-melee-hybrid-base",
+    "title": "Magic Melee Hybrid Base",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--magic-melee-hybrid-base.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 31,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--magic-melee-hybrid-dps",
+    "title": "Magic Melee Hybrid Dps",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--angel-of-death-small-teams--magic-melee-hybrid-dps.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 46,
+      "editableBlocks": 35,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--araxxor--araxxor-melee",
+    "title": "Araxxor Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--araxxor--araxxor-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 60,
+      "editableBlocks": 42,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--araxxor--araxxor-necromancy",
+    "title": "Araxxor Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--araxxor--araxxor-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 60,
+      "editableBlocks": 46,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-hybrid-melee-magic",
+    "title": "High Enrage Arch Glacor Hybrid Melee Magic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-hybrid-melee-magic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 75,
+      "editableBlocks": 54,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-hybrid-melee-ranged",
+    "title": "High Enrage Arch Glacor Hybrid Melee Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-hybrid-melee-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 74,
+      "editableBlocks": 53,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-necromancy",
+    "title": "High Enrage Arch Glacor Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--arch-glacor--high-enrage-arch-glacor-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 103,
+      "editableBlocks": 69,
+      "preservedBlocks": 34
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--barrows",
+    "title": "Barrows",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--barrows.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 164,
+      "editableBlocks": 114,
+      "preservedBlocks": 50
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--beastmaster-durzag--duo-bm",
+    "title": "Duo Bm",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--beastmaster-durzag--duo-bm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 70,
+      "editableBlocks": 49,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--corporeal-beast",
+    "title": "Corporeal Beast",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--corporeal-beast.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 37,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--croesus--croesus",
+    "title": "Croesus",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--croesus--croesus.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 265,
+      "editableBlocks": 193,
+      "preservedBlocks": 72
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--croesus--croesus-1mid-4man",
+    "title": "Croesus 1mid 4man",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--croesus--croesus-1mid-4man.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 73,
+      "editableBlocks": 54,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--croesus--croesus-duo",
+    "title": "Croesus Duo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--croesus--croesus-duo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 35,
+      "editableBlocks": 24,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--dagannoth-kings",
+    "title": "Dagannoth Kings",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--dagannoth-kings.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 43,
+      "editableBlocks": 29,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed1-temple-of-aminishi--ed1-melee-ranged",
+    "title": "ED1 Melee Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed1-temple-of-aminishi--ed1-melee-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 157,
+      "editableBlocks": 98,
+      "preservedBlocks": 59
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed1-temple-of-aminishi--ed1-ranged",
+    "title": "ED1 Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed1-temple-of-aminishi--ed1-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 118,
+      "editableBlocks": 77,
+      "preservedBlocks": 41
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed2-dragonkin-laboratory--ed2-necromancy",
+    "title": "ED2 Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed2-dragonkin-laboratory--ed2-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 125,
+      "editableBlocks": 82,
+      "preservedBlocks": 43
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed2-dragonkin-laboratory--ed2-ranged",
+    "title": "ED2 Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed2-dragonkin-laboratory--ed2-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 69,
+      "editableBlocks": 45,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed3-shadow-reef--melee-magic-hybrid",
+    "title": "Melee Magic Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed3-shadow-reef--melee-magic-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 156,
+      "editableBlocks": 101,
+      "preservedBlocks": 55
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ed3-shadow-reef--necromancy",
+    "title": "Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ed3-shadow-reef--necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 241,
+      "editableBlocks": 142,
+      "preservedBlocks": 99
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--fight-kiln",
+    "title": "Fight Kiln",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--fight-kiln.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 108,
+      "editableBlocks": 85,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--flesh-hatcher-mhekarnahz",
+    "title": "Flesh Hatcher Mhekarnahz",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--flesh-hatcher-mhekarnahz.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 69,
+      "editableBlocks": 44,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--gate-of-elidinis",
+    "title": "Gate Of Elidinis",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--gate-of-elidinis.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 83,
+      "editableBlocks": 66,
+      "preservedBlocks": 17
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--ghrazi-blood-knights--gbk-100-ranged-melee",
+    "title": "Gbk 100 Ranged Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--ghrazi-blood-knights--gbk-100-ranged-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 38,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--giant-mole-hm",
+    "title": "Giant Mole HM",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--giant-mole-hm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 31,
+      "editableBlocks": 17,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--gregorovic--gregorovic-rots",
+    "title": "Gregorovic Rots",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--gregorovic--gregorovic-rots.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 79,
+      "editableBlocks": 52,
+      "preservedBlocks": 27
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--helwyr--helwyr-rots",
+    "title": "Helwyr Rots",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--helwyr--helwyr-rots.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 63,
+      "editableBlocks": 43,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--hermod",
+    "title": "Hermod",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--hermod.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 42,
+      "editableBlocks": 30,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kalphite-king--solo-necromancy",
+    "title": "Solo Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kalphite-king--solo-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 28,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kalphite-king--solo-ranged",
+    "title": "Solo Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kalphite-king--solo-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 39,
+      "editableBlocks": 25,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kalphite-king--stuns-and-mechanics",
+    "title": "Stuns And Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kalphite-king--stuns-and-mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 93,
+      "editableBlocks": 71,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kalphite-queen",
+    "title": "Kalphite Queen",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kalphite-queen.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 31,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--duo-hard-mode",
+    "title": "Duo Hard Mode",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--duo-hard-mode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 73,
+      "editableBlocks": 45,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-magic-melee-hybrid",
+    "title": "Solo Hard Mode Magic Melee Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-magic-melee-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 57,
+      "editableBlocks": 41,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-melee",
+    "title": "Solo Hard Mode Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 66,
+      "editableBlocks": 44,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-melee-ranged-hybrid",
+    "title": "Solo Hard Mode Melee Ranged Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-melee-ranged-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 32,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-necromancy",
+    "title": "Solo Hard Mode Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 39,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-ranged",
+    "title": "Solo Hard Mode Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--kerapac--solo-hard-mode-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 46,
+      "editableBlocks": 38,
+      "preservedBlocks": 8
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--legiones",
+    "title": "Legiones",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--legiones.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 166,
+      "editableBlocks": 113,
+      "preservedBlocks": 53
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--magister",
+    "title": "Magister",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--magister.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 31,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-bolg",
+    "title": "Nex Solo Bolg",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-bolg.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 42,
+      "editableBlocks": 33,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-melee",
+    "title": "Nex Solo Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 61,
+      "editableBlocks": 42,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-necromancy",
+    "title": "Nex Solo Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--nex--nex-solo-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 54,
+      "editableBlocks": 39,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--queen-black-dragon",
+    "title": "Queen Black Dragon",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--queen-black-dragon.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 29,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--mage-melee-hybrid",
+    "title": "Mage Melee Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--mage-melee-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 35,
+      "editableBlocks": 21,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--magic",
+    "title": "Magic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--magic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 30,
+      "editableBlocks": 18,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--melee",
+    "title": "Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 40,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--melee-ranged-hybrid",
+    "title": "Melee Ranged Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--melee-ranged-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 35,
+      "editableBlocks": 21,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--necromancy",
+    "title": "Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 37,
+      "editableBlocks": 24,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--raksha--ranged",
+    "title": "Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--raksha--ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 58,
+      "editableBlocks": 37,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "rasial",
+    "title": "Rasial",
+    "category": "Advanced boss guides",
+    "file": "rasial.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 95,
+      "editableBlocks": 65,
+      "preservedBlocks": 30
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--orikalka-basic",
+    "title": "Orikalka Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--orikalka-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 50,
+      "editableBlocks": 35,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--osseous-basic",
+    "title": "Osseous Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--osseous-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 60,
+      "editableBlocks": 46,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--pthentraken-basic",
+    "title": "Pthentraken Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--pthentraken-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 50,
+      "editableBlocks": 34,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rathis-basic",
+    "title": "Rathis Basic",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rathis-basic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 66,
+      "editableBlocks": 47,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rex-matriarchs-overview",
+    "title": "Rex Matriarchs Overview",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rex-matriarchs-overview.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 39,
+      "editableBlocks": 32,
+      "preservedBlocks": 7
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rex-rotations",
+    "title": "Rex Rotations",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rex-matriarchs--rex-rotations.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 83,
+      "editableBlocks": 59,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rise-of-the-six--rise-of-the-six-4man-and-duo",
+    "title": "Rise Of The Six 4man And Duo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rise-of-the-six--rise-of-the-six-4man-and-duo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 81,
+      "editableBlocks": 57,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--rise-of-the-six--rise-of-the-six-solo",
+    "title": "Rise Of The Six Solo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--rise-of-the-six--rise-of-the-six-solo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 91,
+      "editableBlocks": 73,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-mechanics-overview",
+    "title": "Sanctum HM Mechanics Overview",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-mechanics-overview.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 278,
+      "editableBlocks": 216,
+      "preservedBlocks": 62
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-magic-melee",
+    "title": "Sanctum HM Solo Magic Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-magic-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 84,
+      "editableBlocks": 58,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-melee",
+    "title": "Sanctum HM Solo Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 87,
+      "editableBlocks": 61,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-melee-ranged-hybrid",
+    "title": "Sanctum HM Solo Melee Ranged Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-melee-ranged-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 92,
+      "editableBlocks": 60,
+      "preservedBlocks": 32
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-necromancy",
+    "title": "Sanctum HM Solo Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 294,
+      "editableBlocks": 204,
+      "preservedBlocks": 90
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-ranged",
+    "title": "Sanctum HM Solo Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--sanctum--sanctum-hm-solo-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 84,
+      "editableBlocks": 53,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--4-to-5-magic-hybrid",
+    "title": "4 To 5 Magic Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--4-to-5-magic-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 52,
+      "editableBlocks": 44,
+      "preservedBlocks": 8
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--duo-melee-ranged-hybrid",
+    "title": "Duo Melee Ranged Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--duo-melee-ranged-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 43,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--mechanics",
+    "title": "Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 411,
+      "editableBlocks": 268,
+      "preservedBlocks": 143
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--necromancy-solo",
+    "title": "Necromancy Solo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--necromancy-solo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 77,
+      "editableBlocks": 55,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--solo-magic-hybrid",
+    "title": "Solo Magic Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--solo-magic-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 66,
+      "editableBlocks": 45,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--solak--solo-melee-ranged-hybrid",
+    "title": "Solo Melee Ranged Hybrid",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--solak--solo-melee-ranged-hybrid.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 55,
+      "editableBlocks": 36,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--magic-fsoa",
+    "title": "Magic Fsoa",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--magic-fsoa.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 50,
+      "editableBlocks": 36,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--melee",
+    "title": "Melee",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 51,
+      "editableBlocks": 38,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--necromancy",
+    "title": "Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 113,
+      "editableBlocks": 81,
+      "preservedBlocks": 32
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--p5-movement-and-timing",
+    "title": "P5 Movement And Timing",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--p5-movement-and-timing.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 76,
+      "editableBlocks": 49,
+      "preservedBlocks": 27
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--ranged-bolg",
+    "title": "Ranged Bolg",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--ranged-bolg.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 69,
+      "editableBlocks": 51,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--telos--stuns-and-mechanics",
+    "title": "Stuns And Mechanics",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--telos--stuns-and-mechanics.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 155,
+      "editableBlocks": 101,
+      "preservedBlocks": 54
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--twin-furies--twin-furies-rots",
+    "title": "Twin Furies Rots",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--twin-furies--twin-furies-rots.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 61,
+      "editableBlocks": 41,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--tzkal-zuk--hm-zuk-melee-ranged",
+    "title": "HM Zuk Melee Ranged",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--tzkal-zuk--hm-zuk-melee-ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 210,
+      "editableBlocks": 167,
+      "preservedBlocks": 43
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--tzkal-zuk--hm-zuk-necro",
+    "title": "HM Zuk Necro",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--tzkal-zuk--hm-zuk-necro.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 171,
+      "editableBlocks": 117,
+      "preservedBlocks": 54
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vindicta--vindicta-rots",
+    "title": "Vindicta Rots",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vindicta--vindicta-rots.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 67,
+      "editableBlocks": 45,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago--introductory-necro-solo-vorago-guide",
+    "title": "Introductory Necro Solo Vorago Guide",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago--introductory-necro-solo-vorago-guide.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 165,
+      "editableBlocks": 134,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago--overview",
+    "title": "Overview",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago--overview.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 1067,
+      "editableBlocks": 840,
+      "preservedBlocks": 227
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago--rotations",
+    "title": "Rotations",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago--rotations.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 87,
+      "editableBlocks": 75,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago--tips-and-tricks",
+    "title": "Tips And Tricks",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago--tips-and-tricks.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 430,
+      "editableBlocks": 306,
+      "preservedBlocks": 124
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago-hm--duo-hard-mode",
+    "title": "Duo Hard Mode",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago-hm--duo-hard-mode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 357,
+      "editableBlocks": 220,
+      "preservedBlocks": 137
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago-hm--hard-mode-overview",
+    "title": "Hard Mode Overview",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago-hm--hard-mode-overview.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 593,
+      "editableBlocks": 343,
+      "preservedBlocks": 250
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago-hm--solo-hard-mode-necromancy",
+    "title": "Solo Hard Mode Necromancy",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago-hm--solo-hard-mode-necromancy.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 354,
+      "editableBlocks": 289,
+      "preservedBlocks": 65
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorago-hm--trio-hard-mode",
+    "title": "Trio Hard Mode",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorago-hm--trio-hard-mode.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 672,
+      "editableBlocks": 451,
+      "preservedBlocks": 221
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorkath--mage-melee-hmvork",
+    "title": "Mage Melee Hmvork",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorkath--mage-melee-hmvork.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 27,
+      "editableBlocks": 24,
+      "preservedBlocks": 3
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorkath--melee-ranged-hmvork",
+    "title": "Melee Ranged Hmvork",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorkath--melee-ranged-hmvork.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 26,
+      "editableBlocks": 21,
+      "preservedBlocks": 5
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorkath--melee-vorkath",
+    "title": "Melee Vorkath",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorkath--melee-vorkath.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 66,
+      "editableBlocks": 47,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorkath--necro-vorkath",
+    "title": "Necro Vorkath",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorkath--necro-vorkath.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 102,
+      "editableBlocks": 76,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--vorkath--ranged-hm",
+    "title": "Ranged HM",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--vorkath--ranged-hm.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 42,
+      "editableBlocks": 31,
+      "preservedBlocks": 11
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--yakamaru",
+    "title": "Yakamaru",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--yakamaru.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 351,
+      "editableBlocks": 286,
+      "preservedBlocks": 65
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak",
+    "title": "Zamorak",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 328,
+      "editableBlocks": 274,
+      "preservedBlocks": 54
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-1000-ranged-melee-group",
+    "title": "Zamorak 1000 Ranged Melee Group",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-1000-ranged-melee-group.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 84,
+      "editableBlocks": 58,
+      "preservedBlocks": 26
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-1000-ranged-melee-solo",
+    "title": "Zamorak 1000 Ranged Melee Solo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-1000-ranged-melee-solo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 78,
+      "editableBlocks": 54,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-2000-ranged-melee-group",
+    "title": "Zamorak 2000 Ranged Melee Group",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-2000-ranged-melee-group.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 105,
+      "editableBlocks": 73,
+      "preservedBlocks": 32
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-900-4000-solo",
+    "title": "Zamorak 900 4000 Solo",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-900-4000-solo.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 130,
+      "editableBlocks": 109,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-dungeon",
+    "title": "Zamorak Dungeon",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-dungeon.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 68,
+      "editableBlocks": 46,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-necro-500",
+    "title": "Zamorak Necro 500",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-necro-500.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 85,
+      "editableBlocks": 64,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-ranged-500",
+    "title": "Zamorak Ranged 500",
+    "category": "Advanced boss guides",
+    "file": "pvme-guides--rs3-full-boss-guides--zamorak--zamorak-ranged-500.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 57,
+      "editableBlocks": 33,
+      "preservedBlocks": 24
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--abyssal-beasts",
+    "title": "Abyssal Beasts",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--abyssal-beasts.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 98,
+      "editableBlocks": 78,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--abyssal-demons",
+    "title": "Abyssal Demons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--abyssal-demons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 58,
+      "editableBlocks": 43,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--abyssal-lords",
+    "title": "Abyssal Lords",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--abyssal-lords.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 90,
+      "editableBlocks": 71,
+      "preservedBlocks": 19
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--abyssal-savages",
+    "title": "Abyssal Savages",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--abyssal-savages.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 43,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--acheron-mammoths",
+    "title": "Acheron Mammoths",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--acheron-mammoths.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 71,
+      "editableBlocks": 49,
+      "preservedBlocks": 22
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--armoured-phantoms",
+    "title": "Armoured Phantoms",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--armoured-phantoms.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 94,
+      "editableBlocks": 74,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--automatons",
+    "title": "Automatons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--automatons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 131,
+      "editableBlocks": 91,
+      "preservedBlocks": 40
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--berserkers-and-ash-lords",
+    "title": "Berserkers And Ash Lords",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--berserkers-and-ash-lords.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 51,
+      "editableBlocks": 35,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--block-prefer-list",
+    "title": "Block Prefer List",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--block-prefer-list.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 29,
+      "editableBlocks": 20,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--camel-warriors",
+    "title": "Camel Warriors",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--camel-warriors.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 102,
+      "editableBlocks": 72,
+      "preservedBlocks": 30
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--capsarius",
+    "title": "Capsarius",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--capsarius.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 56,
+      "editableBlocks": 41,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--celestial-dragons",
+    "title": "Celestial Dragons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--celestial-dragons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 47,
+      "editableBlocks": 32,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--crystal-shapeshifters",
+    "title": "Crystal Shapeshifters",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--crystal-shapeshifters.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 75,
+      "editableBlocks": 55,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--dinosaurs",
+    "title": "Dinosaurs",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--dinosaurs.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 163,
+      "editableBlocks": 113,
+      "preservedBlocks": 50
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--edimmu",
+    "title": "Edimmu",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--edimmu.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 117,
+      "editableBlocks": 78,
+      "preservedBlocks": 39
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--elite-profane-scabarites",
+    "title": "Elite Profane Scabarites",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--elite-profane-scabarites.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 108,
+      "editableBlocks": 83,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--gemstone-dragons",
+    "title": "Gemstone Dragons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--gemstone-dragons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 163,
+      "editableBlocks": 122,
+      "preservedBlocks": 41
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--glacors",
+    "title": "Glacors",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--glacors.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 47,
+      "editableBlocks": 34,
+      "preservedBlocks": 13
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--kalgerion-demons",
+    "title": "Kalgerion Demons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--kalgerion-demons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 70,
+      "editableBlocks": 55,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--lava-strykewyrms",
+    "title": "Lava Strykewyrms",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--lava-strykewyrms.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 41,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--living-wyverns",
+    "title": "Living Wyverns",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--living-wyverns.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 74,
+      "editableBlocks": 54,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--lost-grove-creatures",
+    "title": "Lost Grove Creatures",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--lost-grove-creatures.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 166,
+      "editableBlocks": 119,
+      "preservedBlocks": 47
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--metal-dragons",
+    "title": "Metal Dragons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--metal-dragons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 112,
+      "editableBlocks": 81,
+      "preservedBlocks": 31
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--nightmare-creatures",
+    "title": "Nightmare Creatures",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--nightmare-creatures.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 86,
+      "editableBlocks": 58,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--nihils",
+    "title": "Nihils",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--nihils.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 88,
+      "editableBlocks": 59,
+      "preservedBlocks": 29
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--nodon-dragonkin",
+    "title": "Nodon Dragonkin",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--nodon-dragonkin.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 88,
+      "editableBlocks": 61,
+      "preservedBlocks": 27
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--overview-of-slayer",
+    "title": "Overview Of Slayer",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--overview-of-slayer.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 50,
+      "editableBlocks": 38,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--profane-scabarites",
+    "title": "Profane Scabarites",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--profane-scabarites.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 41,
+      "editableBlocks": 27,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--ravenous-strigoi",
+    "title": "Ravenous Strigoi",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--ravenous-strigoi.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 65,
+      "editableBlocks": 42,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--revenants",
+    "title": "Revenants",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--revenants.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 92,
+      "editableBlocks": 67,
+      "preservedBlocks": 25
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--ripper-demon",
+    "title": "Ripper Demon",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--ripper-demon.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 117,
+      "editableBlocks": 87,
+      "preservedBlocks": 30
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--risen-ghosts",
+    "title": "Risen Ghosts",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--risen-ghosts.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 52,
+      "editableBlocks": 34,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--sanguine-crawlers",
+    "title": "Sanguine Crawlers",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--sanguine-crawlers.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 31,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--sanguine-werewolves",
+    "title": "Sanguine Werewolves",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--sanguine-werewolves.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 87,
+      "editableBlocks": 69,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--shattered-worlds",
+    "title": "Shattered Worlds",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--shattered-worlds.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 46,
+      "editableBlocks": 28,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--slayer-point-farming",
+    "title": "Slayer Point Farming",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--slayer-point-farming.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 29,
+      "preservedBlocks": 16
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--soul-devourers",
+    "title": "Soul Devourers",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--soul-devourers.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 180,
+      "editableBlocks": 130,
+      "preservedBlocks": 50
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--soulgazers",
+    "title": "Soulgazers",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--soulgazers.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 74,
+      "editableBlocks": 59,
+      "preservedBlocks": 15
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--spiritual-warriors",
+    "title": "Spiritual Warriors",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--spiritual-warriors.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 62,
+      "editableBlocks": 48,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--tormented-demons",
+    "title": "Tormented Demons",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--tormented-demons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 78,
+      "editableBlocks": 55,
+      "preservedBlocks": 23
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--tzhaar-and-fight-cauldron",
+    "title": "Tzhaar And Fight Cauldron",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--tzhaar-and-fight-cauldron.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 59,
+      "editableBlocks": 38,
+      "preservedBlocks": 21
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--ultimate-slayer",
+    "title": "Ultimate Slayer",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--ultimate-slayer.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 63,
+      "editableBlocks": 45,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--vile-blooms",
+    "title": "Vile Blooms",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--vile-blooms.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 245,
+      "editableBlocks": 180,
+      "preservedBlocks": 65
+    }
+  },
+  {
+    "id": "pvme-guides--slayer--vyres",
+    "title": "Vyres",
+    "category": "Slayer",
+    "file": "pvme-guides--slayer--vyres.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 87,
+      "editableBlocks": 67,
+      "preservedBlocks": 20
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--armour-and-weapons",
+    "title": "Armour And Weapons",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--armour-and-weapons.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 114,
+      "editableBlocks": 96,
+      "preservedBlocks": 18
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--consumables",
+    "title": "Consumables",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--consumables.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 45,
+      "editableBlocks": 31,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--permanent-unlocks",
+    "title": "Permanent Unlocks",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--permanent-unlocks.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 70,
+      "editableBlocks": 42,
+      "preservedBlocks": 28
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--upgrade-order--free-upgrades",
+    "title": "Free Upgrades",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--upgrade-order--free-upgrades.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 64,
+      "editableBlocks": 55,
+      "preservedBlocks": 9
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--upgrade-order--magic",
+    "title": "Magic",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--upgrade-order--magic.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 83,
+      "editableBlocks": 71,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--upgrade-order--melee",
+    "title": "Melee",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--upgrade-order--melee.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 88,
+      "editableBlocks": 76,
+      "preservedBlocks": 12
+    }
+  },
+  {
+    "id": "necromancy-upgrade-order",
+    "title": "Necromancy",
+    "category": "Upgrade order",
+    "file": "necromancy-upgrade-order.json",
+    "summary": "The original Necromancy progression, costs and unlock recommendations.",
+    "stats": {
+      "nodes": 403,
+      "elementNodes": 166,
+      "textNodes": 237,
+      "links": 10,
+      "icons": 68,
+      "media": 1,
+      "blocks": 74,
+      "editableBlocks": 60,
+      "preservedBlocks": 14
+    }
+  },
+  {
+    "id": "pvme-guides--upgrading-info--upgrade-order--ranged",
+    "title": "Ranged",
+    "category": "Gear & upgrades",
+    "file": "pvme-guides--upgrading-info--upgrade-order--ranged.json",
+    "summary": "Recovered PvME guide",
+    "stats": {
+      "blocks": 79,
+      "editableBlocks": 61,
+      "preservedBlocks": 18
+    }
+  }
+]
