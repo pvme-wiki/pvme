@@ -1,3 +1,4 @@
+import { authenticatePublicationWebhook } from './publication-webhooks.mjs';
 import { createHmac } from 'node:crypto';
 import { ServiceError, fail, equalSecret } from './core.mjs';
 import { createAuth, cookie, STATE_COOKIE, safeEditorReturn } from './auth.mjs';
@@ -55,8 +56,8 @@ async function rate(db, key, max, seconds) {
 }
 export function createHandler({ db, config, identityProvider, publisher, logError = () => {} }) {
   const auth = config.configured ? createAuth(db, config, identityProvider ? { provider: identityProvider } : {}) : null;
-  const service = config.configured ? createService(db, { publicationEnabled: Boolean(publisher), repository: config.github }) : null;
-  const jobs = config.configured ? createJobRunner(db, publisher, { origin: config.origin }) : null;
+  const service = config.configured ? createService(db, { publicationEnabled: Boolean(publisher), repository: config.github, publicationTargets: config.publicationTargets, defaultPublicationTarget: config.defaultPublicationTarget }) : null;
+  const jobs = config.configured ? createJobRunner(db, publisher, { origin: config.origin, publicationTargets: config.publicationTargets }) : null;
   const unavailable = () => ({ configured: false, user: null, csrfToken: null, capabilities: { save: false, submit: false, review: false, publication: false }, message: 'Hosted saving and review are not available yet. No changes have been sent.' });
   return async request => {
     let route = '';
@@ -79,19 +80,11 @@ export function createHandler({ db, config, identityProvider, publisher, logErro
       if (route === 'webhooks/github' && method === 'POST') {
         if (!config.github || !publisher) fail(503, 'publication_unavailable', 'Publication is not configured.');
         const raw = await rawBody(request, 1000000);
-        const signature = request.headers.get('x-hub-signature-256');
-        const expected = `sha256=${createHmac('sha256', config.github.webhookSecret).update(raw).digest('hex')}`;
-        if (!equalSecret(expected, signature)) fail(401, 'invalid_signature', 'Invalid webhook signature.');
-        const delivery = request.headers.get('x-github-delivery');
-        if (!/^[a-zA-Z0-9-]{10,100}$/.test(delivery || '')) fail(400, 'invalid_delivery', 'Invalid webhook delivery.');
-        let payload;
-        try { payload = JSON.parse(raw.toString('utf8')); } catch { fail(400, 'invalid_json', 'Invalid webhook body.'); }
-        const sameRepository = payload.repository?.full_name?.toLowerCase() === `${config.github.owner}/${config.github.repo}`.toLowerCase();
-        if (!sameRepository || payload.repository?.private !== true || String(payload.installation?.id) !== config.github.installationId) fail(403, 'invalid_repository', 'Unexpected webhook repository or installation.');
+        const verified = authenticatePublicationWebhook(config, raw, request.headers.get('x-hub-signature-256'), request.headers.get('x-github-delivery'));
         const inserted = await db.transaction(async q => {
-          const result = await q.query('INSERT INTO webhook_deliveries(id) VALUES($1) ON CONFLICT DO NOTHING RETURNING id', [delivery]);
+          const result = await q.query('INSERT INTO webhook_deliveries(id) VALUES($1) ON CONFLICT DO NOTHING RETURNING id', [verified.deliveryId]);
           // A failed wake must leave this delivery retryable on redelivery.
-          if (result.rows.length && ['pull_request', 'push', 'deployment_status', 'check_suite'].includes(request.headers.get('x-github-event'))) await jobs.wake(q);
+          if (result.rows.length && ['pull_request', 'push', 'deployment_status', 'check_suite'].includes(request.headers.get('x-github-event'))) await jobs.wake(q, verified.wakeOptions);
           return result.rows.length > 0;
         });
         return json(200, { accepted: true, duplicate: !inserted });

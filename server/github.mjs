@@ -1,3 +1,4 @@
+import { matchesPublicationProof } from './publication-proof.mjs';
 import { selfApprovalEvidence, ADMIN_SELF_POLICY } from './approval.mjs';
 import { createSign } from 'node:crypto';
 import { AsyncLocalStorage } from 'node:async_hooks';
@@ -9,6 +10,7 @@ function timeout() {
   if (remaining < 100) throw new PublicationError('provider_timeout', 'Publication will resume on the next check.', { retryable: true });
   return AbortSignal.timeout(Math.floor(remaining));
 }
+export const publicationRequestSignal = timeout;
 export class PublicationError extends Error {
   constructor(code, message, { retryable = false } = {}) { super(message); Object.assign(this, { code, retryable }); }
 }
@@ -60,7 +62,7 @@ export function createGitHubApp(config, { fetchImpl = fetch, now = () => Date.no
   }
   async function privateRepo() {
     const repo = await request(repoPath);
-    if (repo.private !== true || repo.full_name?.toLowerCase() !== `${config.owner}/${config.repo}`.toLowerCase()) problem('private_repository_required', 'Publication requires the configured private repository.');
+    if (repo.private !== true || (config.id && Number(repo.id) !== Number(config.id)) || repo.full_name?.toLowerCase() !== `${config.owner}/${config.repo}`.toLowerCase()) problem('private_repository_required', 'Publication requires the configured private repository.');
     return repo;
   }
   async function ref(branch, { optional = false } = {}) {
@@ -191,8 +193,7 @@ export function createGitHubApp(config, { fetchImpl = fetch, now = () => Date.no
         if (text.length > 1000000) return { state: 'awaiting_deployment', provider: next };
         release = JSON.parse(text);
       } catch { return { state: 'awaiting_deployment', provider: next }; }
-      const deployed = release.guides?.[row.guide_id];
-      if (!SHA.test(release.commit || '') || deployed?.submissionId !== row.id || deployed?.contentHash !== row.content_hash) return { state: 'awaiting_deployment', provider: next };
+      if (!SHA.test(release.commit || '') || !matchesPublicationProof(release, row.guide_id, approvedFiles(row)[receiptPath])) return { state: 'awaiting_deployment', provider: next };
       if (release.commit !== mergeSha) {
         const ancestry = await request(`${repoPath}/compare/${mergeSha}...${release.commit}`);
         if (!['ahead', 'identical'].includes(ancestry.status)) return { state: 'awaiting_deployment', provider: next };

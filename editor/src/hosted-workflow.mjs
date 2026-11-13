@@ -14,19 +14,41 @@ export function canReviewSubmission(review, session) {
   return canReview(session) && review?.status === 'submitted' &&
     (!review.isMine || session.user.role === 'admin');
 }
+const publicationPhases = new Set(['content_review', 'website_update', 'deployment', 'live']);
+const activePublicationStates = new Set(['queued', 'working', 'retry', 'awaiting_merge', 'awaiting_deployment']);
+const unavailableStatus = () => ['Status unavailable', 'Refresh to check this submission.'];
+function knownPublicationPipeline(publication) {
+  return publication?.pipeline === undefined ||
+    (publication.pipeline === 'content-pin-v1' && publicationPhases.has(publication.phase));
+}
 export function canCheckPublication(review, session) {
   return canReview(session) && session.capabilities.publication === true &&
     ['approved', 'publishing'].includes(review?.status) &&
-    ['queued', 'working', 'retry', 'awaiting_merge', 'awaiting_deployment'].includes(review?.publication?.state) &&
+    activePublicationStates.has(review?.publication?.state) && knownPublicationPipeline(review?.publication) &&
     !review?.publication?.requiresFreshReview && !review?.publication?.replacementId;
 }
-export const submissionStatus = (status, publication) => publication?.replacementId || publication?.state === 'superseded' ? ['Replaced', 'This submission was replaced. The corrected version needs review.'] : publication?.state === 'blocked' ? ['Publication paused', publication.requiresFreshReview ? 'Edit a saved draft and send a corrected version for review.' : 'Publication needs a maintainer. Live status has not been verified.'] : ({
-  submitted: ['Awaiting review', 'A reviewer will check this version. Later draft edits do not change it.'],
-  approved: ['Approved', 'Approved for publication. Live publication has not been verified yet.'],
-  publishing: ['Publishing', 'Publication is in progress. This version is not confirmed live.'],
-  published: ['Published', 'This approved version is live.'],
-  rejected: ['Changes requested', 'Read the reviewer’s note, edit your draft and send it for review again.'],
-}[status] || ['Status unavailable', 'Refresh to check this submission.']);
+export function submissionStatus(status, publication) {
+  if (publication?.replacementId || publication?.state === 'superseded') return ['Replaced', 'This submission was replaced. The corrected version needs review.'];
+  if (publication?.state === 'blocked') return ['Publication paused', publication.requiresFreshReview ? 'Edit a saved draft and send a corrected version for review.' : 'Publication needs a maintainer. Live status has not been verified.'];
+  if (publication?.pipeline !== undefined) {
+    if (!knownPublicationPipeline(publication)) return unavailableStatus();
+    if (publication.phase === 'live') return status === 'published' && publication.state === 'published'
+      ? ['Published', 'This approved version has been verified on the live website.'] : unavailableStatus();
+    if (!['approved', 'publishing'].includes(status) || !activePublicationStates.has(publication.state)) return unavailableStatus();
+    return ({
+      content_review: ['Approved · awaiting content merge', 'A maintainer needs to merge this approved version into the guide repository. Live publication has not been verified.'],
+      website_update: ['Content merged · website update pending', 'The approved content has merged. A maintainer needs to merge the website update before this version can be verified live. You can keep editing your draft; this submitted version stays unchanged.'],
+      deployment: ['Website update merged · checking publication', 'The website update has merged. This version has not been verified on the live website yet.'],
+    })[publication.phase] || unavailableStatus();
+  }
+  return ({
+    submitted: ['Awaiting review', 'A reviewer will check this version. Later draft edits do not change it.'],
+    approved: ['Approved', 'Approved for publication. Live publication has not been verified yet.'],
+    publishing: ['Publishing', 'Publication is in progress. This version is not confirmed live.'],
+    published: ['Published', 'This approved version is live.'],
+    rejected: ['Changes requested', 'Read the reviewer’s note, edit your draft and send it for review again.'],
+  })[status] || unavailableStatus();
+}
 export function normalizeDraft(draft, guideId, guide) {
   return draft ? { ...draft, id: draft.guideId || guideId, revision: draft.version, mode: 'hosted' }
     : { id: guideId, guideId, revision: 0, version: 0, baseRevision: guide.revision, baselineDocument: structuredClone(guide.document), document: structuredClone(guide.document), savedAt: null, mode: 'hosted' };
@@ -72,13 +94,28 @@ export function canPrepareReplacement(review, session) {
     (review?.isMine === true || canReview(session)) && review?.publication?.state === 'blocked' &&
     review.publication.requiresFreshReview === true && !review.publication.replacementId;
 }
-export function moderatorReviewUrl(review, session) {
-  if (!canReview(session)) return '';
+function safeReviewUrl(value) {
   try {
-    const url = new URL(review?.publication?.reviewUrl);
+    const url = new URL(value);
     if (url.protocol !== 'https:' || url.hostname !== 'github.com' || url.username || url.password || url.port || !/^\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/pull\/[1-9]\d*$/.test(url.pathname)) return '';
     return url.origin + url.pathname;
   } catch { return ''; }
+}
+export function moderatorReviewUrl(review, session) {
+  return canReview(session) ? safeReviewUrl(review?.publication?.reviewUrl) : '';
+}
+export function moderatorPublicationLinks(review, session) {
+  if (!canReview(session)) return [];
+  const publication = review?.publication;
+  if (publication?.pipeline === undefined) {
+    const url = moderatorReviewUrl(review, session);
+    return url ? [{ url, label: 'View pull request' }] : [];
+  }
+  if (!knownPublicationPipeline(publication)) return [];
+  return [
+    { url: safeReviewUrl(publication.contentReviewUrl), label: 'View content pull request' },
+    { url: safeReviewUrl(publication.websiteReviewUrl), label: 'View website update' },
+  ].filter(link => link.url);
 }
 
 export function sameGuideView(hash,guideId) {

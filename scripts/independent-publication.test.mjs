@@ -26,7 +26,7 @@ test('independent: approved dollar syntax renders literally and release output e
   fs.copyFileSync(path.join(repository, 'package-lock.json'), path.join(root, 'package-lock.json'));
   fs.symlinkSync(path.join(repository, 'node_modules'), path.join(root, 'node_modules'), 'dir');
   fs.mkdirSync(path.join(root, 'server'), { recursive: true });
-  fs.copyFileSync(path.join(repository, 'server/core.mjs'), path.join(root, 'server/core.mjs'));
+  for (const file of ['core.mjs', 'publication-proof.mjs']) fs.copyFileSync(path.join(repository, 'server', file), path.join(root, 'server', file));
   const baseline = read(path.join(root, 'editor/content/arch-glacor-basic.json'));
   const heading = baseline.blocks.find(block => block.type === 'heading' && block.editable && block.node.attrs.id && block.editableTextNodeIds.length);
   assert.ok(heading);
@@ -60,8 +60,7 @@ test('independent: approved dollar syntax renders literally and release output e
   const commit = 'a'.repeat(40);
   // This isolated build deliberately uses synthetic receipts. Even when CI is
   // building production, the fixture must not contact a real approval database.
-  const fixtureEnv = { ...process.env, VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_SHA: commit };
-  delete fixtureEnv.DATABASE_URL;
+  const fixtureEnv = { ...Object.fromEntries(['PATH', 'HOME', 'TMPDIR', 'TEMP', 'TMP', 'SystemRoot', 'ComSpec', 'PATHEXT', 'NODE_EXTRA_CA_CERTS', 'LANG'].filter(name => process.env[name] !== undefined).map(name => [name, process.env[name]])), VERCEL_ENV: 'preview', VERCEL_GIT_COMMIT_SHA: commit };
   execFileSync(process.execPath, ['scripts/build-fullstack.mjs'], { cwd: root, env: fixtureEnv, stdio: 'pipe', timeout: 60000 });
   const slots = read(path.join(root, 'reader/reader-slots.json')).pages.filter(slot => slot.sourcePath === baseline.source.sourcePath && slot.slotKind !== 'inline');
   assert.ok(slots.length);
