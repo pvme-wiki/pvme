@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "kind": "unapplied-owner-review-settings",
+  "notAGitHubRegistrationPayload": true,
+  "affiliation": "independent-unofficial",
+  "verifiedStagingOrigin": null,
+  "productionCutoverAuthorizedByThisFile": false,
+  "existingPersonalPublisher": "unchanged",
+  "credentialsIncluded": false,
+  "registrationAndInstallationPerformed": false,
+  "apps": [
+    {
+      "key": "guide-publisher",
+      "proposedName": "Unofficial PvME Guide Publisher",
+      "description": "Independent, unofficial guide-storage project; not an official PvME App.",
+      "registrationOwner": {
+        "kind": "organization",
+        "login": "pvme-wiki"
+      },
+      "visibility": "private-owner-only",
+      "homepageUrl": null,
+      "userAuthorization": {
+        "requestOAuthOnInstall": false,
+        "deviceFlow": false,
+        "callbackUrls": [],
+        "setupUrl": null,
+        "redirectOnUpdate": false
+      },
+      "permissions": {
+        "repository": {
+          "contents": "write",
+          "pull_requests": "write",
+          "metadata": "read"
+        },
+        "organization": {},
+        "enterprise": {},
+        "account": {},
+        "allUnlisted": "none"
+      },
+      "webhooks": {
+        "active": true,
+        "url": null,
+        "urlRule": "verifiedStagingOrigin + /api/editor/webhooks/github",
+        "sslVerification": true,
+        "events": [
+          "push",
+          "pull_request"
+        ],
+        "secretServerKey": "GUIDE_STORE_WEBHOOK_SECRET",
+        "minimumSecretCharacters": 32
+      },
+      "installation": {
+        "account": "pvme-wiki",
+        "repositorySelection": "selected",
+        "repositories": [
+          "pvme-wiki/guides"
+        ],
+        "repositoryId": null,
+        "baseBranch": null,
+        "appId": null,
+        "installationId": null
+      },
+      "serverConfigurationKeys": [
+        "GUIDE_STORE_APP_ID",
+        "GUIDE_STORE_INSTALLATION_ID",
+        "GUIDE_STORE_APP_PRIVATE_KEY",
+        "GUIDE_STORE_WEBHOOK_SECRET"
+      ]
+    },
+    {
+      "key": "guide-reader",
+      "proposedName": "Unofficial PvME Guide Reader",
+      "description": "Independent, unofficial guide-storage project; not an official PvME App.",
+      "registrationOwner": {
+        "kind": "organization",
+        "login": "pvme-wiki"
+      },
+      "visibility": "private-owner-only",
+      "homepageUrl": null,
+      "userAuthorization": {
+        "requestOAuthOnInstall": false,
+        "deviceFlow": false,
+        "callbackUrls": [],
+        "setupUrl": null,
+        "redirectOnUpdate": false
+      },
+      "permissions": {
+        "repository": {
+          "contents": "read",
+          "pull_requests": "read",
+          "metadata": "read"
+        },
+        "organization": {},
+        "enterprise": {},
+        "account": {},
+        "allUnlisted": "none"
+      },
+      "webhooks": {
+        "active": false,
+        "url": null,
+        "urlRule": null,
+        "sslVerification": true,
+        "events": [],
+        "secretServerKey": null,
+        "minimumSecretCharacters": null
+      },
+      "installation": {
+        "account": "pvme-wiki",
+        "repositorySelection": "selected",
+        "repositories": [
+          "pvme-wiki/guides"
+        ],
+        "repositoryId": null,
+        "baseBranch": null,
+        "appId": null,
+        "installationId": null
+      },
+      "serverConfigurationKeys": [
+        "GUIDE_STORE_READ_APP_ID",
+        "GUIDE_STORE_READ_INSTALLATION_ID",
+        "GUIDE_STORE_READ_PRIVATE_KEY"
+      ]
+    },
+    {
+      "key": "personal-app-reader",
+      "proposedName": "Unofficial PvME App Reader",
+      "description": "Independent, unofficial guide-storage project; not an official PvME App.",
+      "registrationOwner": {
+        "kind": "personal",
+        "login": "zarnab222-dev"
+      },
+      "visibility": "private-owner-only",
+      "homepageUrl": null,
+      "userAuthorization": {
+        "requestOAuthOnInstall": false,
+        "deviceFlow": false,
+        "callbackUrls": [],
+        "setupUrl": null,
+        "redirectOnUpdate": false
+      },
+      "permissions": {
+        "repository": {
+          "contents": "read",
+          "pull_requests": "read",
+          "metadata": "read"
+        },
+        "organization": {},
+        "enterprise": {},
+        "account": {},
+        "allUnlisted": "none"
+      },
+      "webhooks": {
+        "active": false,
+        "url": null,
+        "urlRule": null,
+        "sslVerification": true,
+        "events": [],
+        "secretServerKey": null,
+        "minimumSecretCharacters": null
+      },
+      "installation": {
+        "account": "zarnab222-dev",
+        "repositorySelection": "selected",
+        "repositories": [
+          "zarnab222-dev/pvme"
+        ],
+        "repositoryId": null,
+        "baseBranch": null,
+        "appId": null,
+        "installationId": null
+      },
+      "serverConfigurationKeys": [
+        "GUIDE_STORE_APP_READ_APP_ID",
+        "GUIDE_STORE_APP_READ_INSTALLATION_ID",
+        "GUIDE_STORE_APP_READ_PRIVATE_KEY"
+      ]
+    }
+  ],
+  "stagingWebhookGate": {
+    "status": "blocked-pending-owner-approved-receiver",
+    "currentPR8PreviewAuthenticationProtected": true,
+    "deploymentProtectionVerified": false,
+    "exactAppOriginVerified": false,
+    "signedRepositoryBoundDeliveryVerified": false,
+    "privateReviewDataExposed": false,
+    "allowProductionFallback": false,
+    "allowProtectionBypass": false
+  },
+  "runtimeIdentityGate": {
+    "connectorInstallationIsRuntimeInstallation": false,
+    "existingRuntimeBindingsVerifiedByThisBundle": false
+  }
+}

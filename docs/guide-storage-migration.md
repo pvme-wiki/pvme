@@ -1,7 +1,8 @@
 # Guide storage migration: staged operator runbook
 
 **Status: staged implementation; organization access and the remote publication
-path are unverified. No production switch is authorized by this runbook.**
+path are unverified. Zarnab must explicitly approve any production cutover,
+even after all technical checks pass. This runbook grants no cutover approval.**
 
 The canonical architecture and decision record lives outside application code:
 [PvME private guide storage migration draft](https://chatgpt.com/space/page_967f8f7774d881918438f3b28fb41182).
@@ -33,7 +34,7 @@ prove absence. Do not guess an installation or repository ID.
 
 The existing private personal app repository, zarnab222-dev/pvme, its Vercel
 project, domains, Hobby plan and owner control stay in place. Until staged
-acceptance and an explicit operator activation, the existing publication
+acceptance, Zarnab’s explicit approval and a controlled operator activation, the existing publication
 pipeline remains authoritative.
 
 ## Platform and identity boundaries
@@ -176,7 +177,7 @@ prove that the runtime publisher or a Vercel build can read the destination.
 | Migration tooling | Read/write access only to the selected private guides repository after its identity is verified; no unrelated organization repositories |
 | Legacy app publisher | Existing selected personal app repository/installation and minimum Contents/Pull requests write permissions |
 | Guide publisher | Selected guides repository through its distinct verified organization installation; minimum Contents/Pull requests write permissions |
-| Trusted build fetch/proof verification | Two selected-repository read-App installations, one for guides and one for the personal app; Contents and Pull requests read only, plus Metadata read; no publication-write App key in build inputs |
+| Trusted build fetch/proof verification | Two selected-repository read-App installations, one for guides and one for the personal app; Contents and Pull requests read only, plus Metadata read; exclusion of publisher write keys from build inputs remains unverified |
 
 GitHub App installation tokens are scoped to a particular installation and
 can be restricted further by repository and permissions. They cannot reach
@@ -208,6 +209,18 @@ selected-repository read installations. Verify fresh tokens, denied/wrong
 installations, expiry/retry and source fetch performance in a trusted staged
 build before activation. Keep all keys/tokens server-side, environment-scoped
 and out of untrusted previews, pins, Git files, logs and public output.
+
+Normal Vercel project variables are available during both build and function
+execution. Distinct read-App helpers establish which tokens those helpers
+request; they do not prove that a coexisting publisher key is absent from the
+build environment. The current automatic Git deployment has no demonstrated
+hard separation of those credentials. See the
+[credential-boundary investigation](vercel-credential-boundary.md) for the
+supported CLI distinction, connector limitation and non-secret experiment.
+Before activation, retain the strict requirement and prove a supported stage
+boundary, or obtain an explicit reviewed decision accepting the trusted build
+and runtime as one server-side principal. Neither decision is made here.
+No untrusted preview may receive production credentials in either model.
 
 The runtime guide-store configuration currently names GUIDE_STORE_STAGE,
 GUIDE_STORE_REPOSITORY_ID, GUIDE_STORE_OWNER, GUIDE_STORE_REPO,
