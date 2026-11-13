@@ -1,6 +1,6 @@
 # Disposable PostgreSQL verification
 
-The migration was exercised on a real, rootless PostgreSQL 17.11 process on 2026-11-13. All 11 named checks passed, followed by a separate negative certificate-trust test. This closes the local PostgreSQL compatibility gate. Hosted provider permissions, TLS, pooling and remote publication remain separate gates.
+The migration was exercised on a real, rootless PostgreSQL 17.11 process on 2026-11-13. All 13 named checks passed, followed by a separate negative certificate-trust test. This closes the local PostgreSQL compatibility gate. Hosted provider permissions, TLS, pooling and remote publication remain separate gates.
 
 ## Reproduce
 
@@ -16,13 +16,13 @@ The observed run used Debian's signed `trixie` package index and the free packag
 
 ## Recorded evidence
 
-The latest verified run finished at `2026-11-13T18:23:30.401Z`:
+The latest verified run finished at `2026-11-13T18:35:34.300Z`:
 
 - PostgreSQL: `17.11 (Debian 17.11-0+deb13u1)`; negotiated TLS: `TLSv1.3`.
-- Reviewed source tree: `0b0f268beb7ac7d6549a9b42d9fe3169eb293b26`.
-- Sanitized report: `.runtime/postgres-selected-role-owibe8/report.json`.
-- Separate runtime clients used distinct PostgreSQL backend IDs, `74` and `75`.
-- The report includes SHA-256 fingerprints of the database client, migrations, routing, service, job, webhook and approval modules actually read by the verifier. The tree hash identifies the checked-out base; the report fingerprints bind the tested production files even when a worktree has local changes.
+- Reviewed source tree: `6128f762e78953eba9186a75680ec3012b10b03e`.
+- Sanitized report: `.runtime/postgres-selected-role-eNCr8n/report.json`.
+- Separate runtime clients used distinct PostgreSQL backend IDs, `75` and `67`.
+- The report includes SHA-256 fingerprints of the database client, migrations, routing, service, job, webhook, approval and publication-gate modules actually read by the verifier. The tree hash identifies the checked-out base; the report fingerprints bind the tested production files even when a worktree has local changes.
 
 The report contains no connection strings, passwords, keys or guide source. It is a local ignored artifact and is not shipped with the application.
 
@@ -31,16 +31,18 @@ The report contains no connection strings, passwords, keys or guide source. It i
 1. The unchanged production `createDatabase` client connected with certificate verification enabled. A separate process without the generated CA rejected the same server certificate. A URL parameter requesting disabled SSL did not relax the production client's verification settings.
 2. A dedicated non-superuser operator installed v1 and seeded synthetic guide fixtures. A separate runtime role received only the documented baseline grants and migration-specific grant delta.
 3. The real `002_publication_targets.sql` migration and its idempotent rerun preserved the original approved snapshot, publication receipt and history digests.
-4. Runtime role ownership, superuser privileges, role membership and schema DDL were absent. Settings, authority and guide-target writes were denied. All five relevant trigger functions were security invokers.
-5. Concurrent saves from independent runtime pools produced one successful compare-and-swap and one revision conflict, preserving the successful draft.
-6. An old-version submission INSERT was bound to the immutable legacy destination by the database trigger. A drained synthetic guide was then handed off by the operator, and a new submission retained its content destination. Attempts to rewrite submitted source, target, audit history or guide history failed.
-7. Runtime controller writes updated guide pin mirrors under the documented grants. Stale versions, non-forward proof and forged direct mirror updates failed.
-8. Competing controller clients refused a live lease. After deliberate local lease expiry, the superseded worker could neither checkpoint nor release its replacement's lease.
-9. Competing publication workers refused duplicate claims, and an expired worker could not overwrite its replacement's result.
-10. The real HTTP webhook handler rolled back both delivery deduplication and scoped job wake after an injected failure following SQL execution. Redelivery then succeeded. A content-repository event did not wake the legacy job.
-11. The original approved snapshot and receipt remained unchanged after the concurrent operations.
+4. The actual `verifyPublicationGate` aggregate approval/inventory query ran under runtime grants inside `SET TRANSACTION READ ONLY`. One legacy approved overlay and both expected baselines passed; an altered private review receipt failed. History, jobs, guide authority and controller digests stayed unchanged.
+5. Runtime role ownership, superuser privileges, role membership and schema DDL were absent. Settings, authority and guide-target writes were denied. All five relevant trigger functions were security invokers.
+6. Concurrent saves from independent runtime pools produced one successful compare-and-swap and one revision conflict, preserving the successful draft.
+7. An old-version submission INSERT was bound to the immutable legacy destination by the database trigger. A drained synthetic guide was then handed off by the operator, and a new submission retained its content destination. Attempts to rewrite submitted source, target, audit history or guide history failed.
+8. Runtime controller writes updated guide pin mirrors under the documented grants. Stale versions, non-forward proof and forged direct mirror updates failed.
+9. Competing controller clients refused a live lease. After deliberate local lease expiry, the superseded worker could neither checkpoint nor release its replacement's lease.
+10. After the durable controller advanced to its current content commit, the real read-only build query verified both a legacy and a content approval, exact baseline inventory and the active content pin. An older pin with identical guide hashes failed with `content_pin_not_current`. Missing or false source proof failed closed. The explicit mock source callback checked the exact app commit, content pin and both approval rows. Each successful gate used one aggregate authority query, with no history or job mutations.
+11. Competing publication workers refused duplicate claims, and an expired worker could not overwrite its replacement's result.
+12. The real HTTP webhook handler rolled back both delivery deduplication and scoped job wake after an injected failure following SQL execution. Redelivery then succeeded. A content-repository event did not wake the legacy job.
+13. The original approved snapshot and receipt remained unchanged after the concurrent operations.
 
-The handoff ancestry/content callback and publication-provider responses are synthetic fixtures. This verifies database boundaries and workflow behavior, not a live GitHub or Vercel deployment.
+The handoff ancestry/content callback, build-gate source proof and publication-provider responses are explicit synthetic fixtures. This verifies database boundaries and workflow behavior, not a live GitHub or Vercel deployment.
 
 ## Isolation and cleanup
 

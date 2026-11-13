@@ -49,12 +49,15 @@ See [the rollout runbook](guide-storage-migration.md) and its eight review gates
 
 ## Continued local database and integration review
 
-An isolated PostgreSQL 17.11 process passed 11 selected-role and multi-client
+An isolated PostgreSQL 17.11 process passed 13 selected-role and multi-client
 checks plus rejection of an untrusted CA, using the unchanged production
 client with verified TLS 1.3. Migration 002 preserved immutable approvals and
 receipts; the documented runtime grants and invoker triggers worked, while
 unauthorized authority/settings writes failed. Concurrent save, lease, stale
-worker and atomic webhook retry cases passed. Production source fingerprints
+worker and atomic webhook retry cases passed. The actual aggregate publication
+gate ran under runtime grants inside read-only transactions for legacy and
+mixed content; altered receipts, stale pins and absent/false mocked source
+proofs failed closed without state changes. Production source fingerprints
 were independently checked. See [database evidence](postgres-verification.md).
 No hosted or production database was accessed.
 

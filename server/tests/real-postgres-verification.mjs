@@ -12,6 +12,7 @@ import { createHandler } from '../http.mjs';
 import { createPinController, handoffGuidePublication } from '../publication-targets.mjs';
 import { approvedFiles } from '../github.mjs';
 import { documentHash } from '../core.mjs';
+import { verifyPublicationGate } from '../publication-gate.mjs';
 
 const untrusted = process.argv[2] === '--untrusted';
 const configFile = process.argv[untrusted ? 3 : 2];
@@ -31,7 +32,7 @@ if (untrusted) {
 const report={scope:'disposable loopback PostgreSQL; no production/provider credentials used',checks:[],startedAt:new Date().toISOString()};
 const root=path.resolve(import.meta.dirname,'../..');
 report.sourceFiles={};
-for(const name of ['server/db.mjs','server/manage.mjs','server/migrations/001_initial.sql','server/migrations/002_publication_targets.sql','server/publication-targets.mjs','server/service.mjs','server/jobs.mjs','server/http.mjs','server/publication-webhooks.mjs','server/approval.mjs']) report.sourceFiles[name]=createHash('sha256').update(await fs.readFile(path.join(root,name))).digest('hex');
+for(const name of ['server/db.mjs','server/manage.mjs','server/migrations/001_initial.sql','server/migrations/002_publication_targets.sql','server/publication-targets.mjs','server/service.mjs','server/jobs.mjs','server/http.mjs','server/publication-webhooks.mjs','server/approval.mjs','server/publication-gate.mjs']) report.sourceFiles[name]=createHash('sha256').update(await fs.readFile(path.join(root,name))).digest('hex');
 const connections=[];
 const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 async function check(name,work){const start=performance.now();try{const evidence=await work();report.checks.push({name,passed:true,milliseconds:Math.round(performance.now()-start),...(evidence?{evidence}:{})});console.log(JSON.stringify({check:name,passed:true}));}catch(error){report.checks.push({name,passed:false,code:error.code||null,message:error.message});throw error;}}
@@ -48,6 +49,20 @@ const historySnapshot=async db=>{
  return digest(result);
 };
 const serviceOptions={publicationEnabled:true,publicationTargets:registry,defaultPublicationTarget:legacy};
+const approvedEntry=async id=>{
+ const row=(await runtime1.query('SELECT * FROM submissions WHERE id=$1',[id])).rows[0];
+ return{document:row.document,contentHash:row.content_hash,receipt:approvedFiles(row)[`content/reviews/${row.id}.json`]};
+};
+const readOnlyGate=(entries,options)=>runtime1.transaction(async q=>{
+ await q.query('SET TRANSACTION READ ONLY');
+ assert.equal((await q.query("SELECT current_setting('transaction_read_only') AS enabled")).rows[0].enabled,'on');
+ let authorityQueries=0;
+ const result=await verifyPublicationGate({query:(sql,params)=>{assert.match(sql,/^SELECT\s/);authorityQueries++;return q.query(sql,params);}},entries,options);
+ assert.equal(authorityQueries,1);
+ return result;
+});
+const gateState=async()=>digest({history:await historySnapshot(runtime2),guides:(await runtime2.query('SELECT * FROM guides ORDER BY id')).rows,jobs:(await runtime2.query('SELECT * FROM publication_jobs ORDER BY submission_id')).rows,controllers:(await runtime2.query('SELECT * FROM publication_pin_controllers ORDER BY origin')).rows});
+
 try{
  bootstrap=new pg.Client(postgresOptions(connection('pvme_bootstrap',local.credentials.bootstrap,'postgres')));await bootstrap.connect();
  for(const role of ['operator','runtime'])await bootstrap.query(`CREATE ROLE pvme_${role} LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS PASSWORD ${literal(local.credentials[role])}`);
@@ -97,6 +112,15 @@ try{
    REVOKE UPDATE ON guides FROM pvme_runtime;
    REVOKE UPDATE(publication_target) ON guides FROM pvme_runtime;
    GRANT UPDATE(revision,publication_pin) ON guides TO pvme_runtime;`);
+ });
+ await check('real runtime read-only build gate verifies legacy approval inventory and rejects an altered private receipt',async()=>{
+  const before=await gateState(),entry=await approvedEntry(legacyId);
+  const options={expectedBaselines:new Map([[baseline.id,baseline],[interfaceGuide.id,interfaceGuide]])};
+  assert.deepEqual(await readOnlyGate([entry],options),{verifiedCount:1,submissionIds:[legacyId]});
+  const altered=structuredClone(entry);altered.receipt.reviewNote+=' changed after approval';
+  await assert.rejects(readOnlyGate([altered],options),error=>error.code==='approval_content_mismatch');
+  assert.equal(await gateState(),before);
+  return{verifiedCount:1,authorityStatementCount:1,transactionReadOnly:true,historyAndJobsUnchanged:true};
  });
  await check('runtime has no ownership, role escalation, DDL or authority/settings write privileges',async()=>{
   const role=(await runtime1.query('SELECT rolsuper,rolcreaterole,rolcreatedb,rolbypassrls FROM pg_roles WHERE rolname=current_user')).rows[0];assert.ok(Object.values(role).every(value=>value===false));
@@ -158,6 +182,28 @@ try{
   const fresh=second.withLease(content.origin,async lease=>{await lease.checkpoint({expectedVersion:2,contentCommit:'d'.repeat(40),provider:{websiteNumber:3},isDescendant:async()=>true});newEntered.resolve();await newFinish.promise;assert.equal((await lease.read()).contentCommit,'d'.repeat(40));});
   await newEntered.promise;finish.resolve();await stale;newFinish.resolve();await fresh;
   const row=(await runtime1.query('SELECT content_commit,lease_token FROM publication_pin_controllers WHERE origin=$1',[content.origin])).rows[0];assert.equal(row.content_commit,'d'.repeat(40));assert.equal(row.lease_token,null);
+ });
+ await check('real runtime read-only build gate verifies mixed authorities and current pin, with explicit mocked source proof',async()=>{
+  const before=await gateState(),entries=await Promise.all([approvedEntry(legacyId),approvedEntry(contentId)]),entry=entries[1];
+  const appCommit='e'.repeat(40),contentCommit='d'.repeat(40);
+  const pin={schemaVersion:1,mode:'active',origin:content.origin,repository:{...content.repository,id:Number(content.repository.id)},contentCommit,manifestSha256:'f'.repeat(64),guideIds:[interfaceGuide.id]};
+  const guideStore={pin,guides:new Map([[interfaceGuide.id,{document:entry.document,contentHash:entry.contentHash,baselineHash:documentHash(interfaceGuide),revision:2}]])};
+  let proofCalls=0;
+  // Deliberate fixture: no remote GitHub ancestry or deployment is claimed.
+  const mockVerifySource=async input=>{
+   proofCalls++;assert.equal(input.appCommit,appCommit);assert.deepEqual(input.pin,pin);
+   assert.deepEqual(input.rows.map(row=>row.id).sort(),[legacyId,contentId].sort());
+   for(const row of input.rows){const expected=entries.find(value=>value.receipt.submissionId===row.id);assert.equal(documentHash(row.document),expected.contentHash);assert.deepEqual(row.publication_target,row.id===contentId?content:legacy);assert.ok(Array.isArray(row.approval_events)&&row.approval_events.length>0);}
+   return{appCommit,contentCommit,contentOrigin:content.origin};
+  };
+  const options={expectedBaselines:new Map([[baseline.id,baseline],[interfaceGuide.id,interfaceGuide]]),guideStore,appCommit,verifySource:mockVerifySource};
+  assert.deepEqual(await readOnlyGate(entries,options),{verifiedCount:2,submissionIds:[legacyId,contentId]});assert.equal(proofCalls,1);
+  const wrongPin={...guideStore,pin:{...pin,contentCommit:'b'.repeat(40)}};
+  await assert.rejects(readOnlyGate(entries,{...options,guideStore:wrongPin}),error=>error.code==='content_pin_not_current');assert.equal(proofCalls,1);
+  await assert.rejects(readOnlyGate(entries,{...options,verifySource:null}),error=>error.code==='publication_source_unavailable');
+  await assert.rejects(readOnlyGate(entries,{...options,verifySource:async()=>false}),error=>error.code==='publication_source_unavailable');
+  assert.equal(await gateState(),before);
+  return{verifiedCount:2,authorityStatementCount:1,transactionReadOnly:true,sourceProof:'explicit mock, no remote ancestry verification',historyAndJobsUnchanged:true};
  });
  await check('independent job workers refuse duplicate claims and a late expired worker cannot overwrite its replacement',async()=>{
   const entered=gate(),finish=gate();
