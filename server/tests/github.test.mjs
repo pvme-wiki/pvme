@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { createGitHubApp, approvedFiles } from '../github.mjs';
+import { publicationProofId } from '../publication-proof.mjs';
 import { documentHash } from '../core.mjs';
 import { config, githubFake } from './github-contract.mjs';
 function snapshot() {
@@ -70,4 +71,16 @@ test('pinned GitHub contract requires an explicit valid merge SHA, never a branc
   fake.release({ commit: merge, guides: { example: { submissionId: row.id, contentHash: row.content_hash } } });
   assert.equal((await provider.reconcile(row, pull, 'https://pvme.example')).state, 'published');
   assert.ok(fake.calls.filter(call => call.headers?.Authorization).every(call => call.headers['X-GitHub-Api-Version'] === '2022-11-28'));
+});
+
+test('legacy in-flight approval reconciles schema-2 public proof without exposing its receipt UUID', async () => {
+  const row=snapshot(),fake=githubFake(row),provider=createGitHubApp(config,fake);
+  const pull=await provider.ensurePullRequest(row),merge=fake.merge();
+  const receipt=approvedFiles(row)[`content/reviews/${row.id}.json`];
+  const release={schemaVersion:2,commit:merge,appCommit:merge,contentCommit:'c'.repeat(40),contentOrigin:'guides-v1',guides:{example:{proofId:publicationProofId(receipt),contentHash:row.content_hash}}};
+  assert.ok(!JSON.stringify(release).includes(row.id));fake.release(release);
+  assert.equal((await provider.reconcile(row,pull,'https://pvme.example')).state,'published');
+  for(const incorrect of [{...release,schemaVersion:3},{...release,appCommit:fake.original},{...release,guides:{example:{...release.guides.example,proofId:publicationProofId({...receipt,reviewNote:'Not the approval'})}}},{...release,guides:{example:{...release.guides.example,submissionId:row.id}}}]) {
+    fake.release(incorrect);assert.equal((await provider.reconcile(row,pull,'https://pvme.example')).state,'awaiting_deployment');
+  }
 });

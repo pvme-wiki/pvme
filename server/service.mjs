@@ -1,10 +1,11 @@
+import { targetForNewSubmission, assertPublicationAuthority, trustedPublicationTarget } from './publication-targets.mjs';
 import { ADMIN_SELF_POLICY } from './approval.mjs';
 import { randomUUID } from 'node:crypto';
 import { validateDocument } from '../editor/shared/model.mjs';
 import { fail, fields, integer, boundedText, documentHash, iso, HOSTED_DOCUMENT_LIMIT_BYTES } from './core.mjs';
 const guideIdPattern = /^[a-z0-9][a-z0-9-]{0,100}$/;
 const uuidPattern = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
-export const needsFreshReview = code => ['source_conflict', 'branch_conflict', 'pull_request_conflict', 'merge_conflict', 'snapshot_corrupt'].includes(code);
+export const needsFreshReview = code => ['source_conflict', 'branch_conflict', 'pull_request_conflict', 'merge_conflict', 'snapshot_corrupt', 'publication_handoff_conflict', 'publication_target_invalid'].includes(code);
 export const isReviewer = user => ['moderator', 'admin'].includes(user?.role);
 export const draftView = row => row ? {
   guideId: row.guide_id, version: row.version, baseRevision: row.base_revision,
@@ -12,21 +13,39 @@ export const draftView = row => row ? {
   ...(row.baseline_document ? { baselineDocument: row.baseline_document } : {}),
 } : null;
 export const guideView = row => ({ document: row.document, revision: row.revision, contentHash: row.content_hash });
-export function submissionView(row, user, { detail = false, repository = null } = {}) {
-  const reviewer = isReviewer(user);
-  const prNumber = row.job_provider?.number || row.job_provider?.diagnosticPrNumber;
-  const safeRepository = repository && /^[A-Za-z0-9_.-]+$/.test(repository.owner) && /^[A-Za-z0-9_.-]+$/.test(repository.repo);
-  const reviewUrl = reviewer && safeRepository && Number.isSafeInteger(prNumber) && prNumber > 0
-    ? `https://github.com/${repository.owner}/${repository.repo}/pull/${prNumber}` : null;
+export function submissionView(row, user, { detail = false, repository = null, publicationTargets } = {}) {
+  const reviewer = isReviewer(user), info = row.job_provider || {};
+  let trusted;
+  if (row.publication_target) {
+    try { trusted = trustedPublicationTarget(row.publication_target, publicationTargets); } catch {}
+  }
+  const safeUrl = (repo, number) => repo && /^[A-Za-z0-9_.-]+$/.test(repo.owner) && /^[A-Za-z0-9_.-]+$/.test(repo.repo) && Number.isSafeInteger(number) && number > 0
+    ? `https://github.com/${repo.owner}/${repo.repo}/pull/${number}` : null;
+  const contentPipeline = row.publication_target?.pipeline === 'content-pin-v1';
+  const reviewUrl = reviewer ? safeUrl(trusted?.target.repository || (!row.publication_target ? repository : null), info.number || info.diagnosticPrNumber) : null;
+  const phases = ['content_review','website_update','deployment','live'];
+  const phase = contentPipeline ? (info.phase === undefined && row.status !== 'published' ? 'content_review' : phases.includes(info.phase) ? info.phase : null) : null;
   return {
     id: row.id, guideId: row.guide_id, title: row.document.title, version: row.version,
     baseRevision: row.base_revision, draftVersion: row.draft_version, summary: row.summary,
     status: row.status, createdAt: iso(row.created_at), reviewedAt: iso(row.reviewed_at),
     reviewNote: row.review_note || '', isMine: row.owner_id === user.id, contentHash: row.content_hash,
     ...(detail ? { document: row.document, baselineDocument: row.baseline_document } : {}),
-    publication: row.job_state ? { state: row.job_provider?.replacementId ? 'superseded' : row.job_state, requiresFreshReview: row.job_state === 'blocked' && needsFreshReview(row.job_error) && !row.job_provider?.replacementId, replacementId: row.job_provider?.replacementId || null, ...(reviewer ? { errorCode: row.job_error || null, reviewUrl } : {}) } : null,
-    publicationIssue: row.job_provider?.replacementId ? 'A fresh submission replaces this publication attempt.' : row.job_state === 'blocked' ? (needsFreshReview(row.job_error) ? 'Publication is blocked. Save a reconciled draft and submit it for fresh review.' : 'Publication needs a maintainer to repair the publishing connection before retrying.') : row.job_state === 'retry' ? 'Publication will retry. Your approved submission is safe.' : null,
+    publication: row.job_state ? {
+      state: info.replacementId ? 'superseded' : row.job_state,
+      requiresFreshReview: row.job_state === 'blocked' && needsFreshReview(row.job_error) && !info.replacementId,
+      replacementId: info.replacementId || null,
+      ...(contentPipeline ? { pipeline: 'content-pin-v1', phase: trusted ? phase : null } : {}),
+      ...(reviewer ? { errorCode: row.job_error || null,
+        ...(contentPipeline ? { contentReviewUrl: reviewUrl, websiteReviewUrl: trusted ? safeUrl(trusted.descriptor.appRepository, info.websiteNumber || info.pin?.number) : null } : { reviewUrl }),
+      } : {}),
+    } : null,
+    publicationIssue: info.replacementId ? 'A fresh submission replaces this publication attempt.' : row.job_state === 'blocked' ? (needsFreshReview(row.job_error) ? 'Publication is blocked. Save a reconciled draft and submit it for fresh review.' : 'Publication needs a maintainer to repair the publishing connection before retrying.') : row.job_state === 'retry' ? 'Publication will retry. Your approved submission is safe.' : null,
   };
+}
+function destinationFailure(error) {
+  if (error?.name !== 'PublicationTargetError') throw error;
+  fail(error.code.startsWith('publication_handoff') ? 409 : 503, error.code, error.message);
 }
 export async function audit(q, actor, action, subject, data = {}) {
   await q.query('INSERT INTO audit_events(id,actor_id,action,subject_id,data) VALUES($1,$2,$3,$4,$5)', [randomUUID(), actor, action, subject, JSON.stringify(data)]);
@@ -61,23 +80,28 @@ async function submission(q, id, { lock = false } = {}) {
   return row;
 }
 const draftDetailSql = 'SELECT d.*,r.document AS baseline_document FROM drafts d JOIN guide_revisions r ON r.guide_id=d.guide_id AND r.revision=d.base_revision WHERE owner_id=$1 AND d.guide_id=$2';
-async function submitSavedSnapshot(q, actor, id, input, summary) {
+async function submitSavedSnapshot(q, actor, id, input, summary, routing = {}) {
   const user = await requireUser(q, actor, { lock: true });
   const current = await guide(q, id, { lock: true });
   const draft = (await q.query(`${draftDetailSql} FOR UPDATE OF d`, [actor, id])).rows[0];
   if (!draft || input.expectedVersion !== draft.version) conflict(draft);
   const prior = (await q.query('SELECT * FROM submissions WHERE owner_id=$1 AND guide_id=$2 AND draft_version=$3', [actor, id, draft.version])).rows[0];
-  if (prior) return submissionView(prior, user, { detail: true });
+  if (prior) return submissionView(prior, user, { ...routing, detail: true });
   if (draft.base_revision !== current.revision) baselineConflict(current, draft.version);
   validate(draft.document, current.document);
   if (documentHash(draft.document) === current.content_hash) fail(422, 'no_changes', 'Make a change before submitting this guide.');
   const pending = Number((await q.query("SELECT count(*) FROM submissions WHERE owner_id=$1 AND status='submitted'", [actor])).rows[0].count);
   if (pending >= 20) fail(429, 'submission_limit', 'Wait for review of your existing submissions before sending more.');
-  const row = (await q.query('INSERT INTO submissions(id,owner_id,guide_id,draft_version,base_revision,baseline_hash,baseline_document,document,content_hash,summary) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *', [randomUUID(), actor, id, draft.version, draft.base_revision, current.content_hash, JSON.stringify(current.document), JSON.stringify(draft.document), documentHash(draft.document), summary])).rows[0];
+  let target;
+  try { target = await targetForNewSubmission(q, id, routing); } catch (error) { destinationFailure(error); }
+  const values = [randomUUID(), actor, id, draft.version, draft.base_revision, current.content_hash, JSON.stringify(current.document), JSON.stringify(draft.document), documentHash(draft.document), summary];
+  if (target) values.push(JSON.stringify(target));
+  const row = (await q.query(`INSERT INTO submissions(id,owner_id,guide_id,draft_version,base_revision,baseline_hash,baseline_document,document,content_hash,summary${target ? ',publication_target' : ''}) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10${target ? ',$11' : ''}) RETURNING *`, values)).rows[0];
   await audit(q, actor, 'submission.created', row.id, { contentHash: row.content_hash, baseRevision: row.base_revision });
-  return submissionView(row, user, { detail: true });
+  return submissionView(row, user, { ...routing, detail: true });
 }
-export function createService(db, { publicationEnabled = false, repository = null } = {}) {
+export function createService(db, { publicationEnabled = false, repository = null, publicationTargets, defaultPublicationTarget } = {}) {
+  const routing = { repository, publicationTargets, defaultPublicationTarget };
   return {
     async listGuides() {
       return (await db.query("SELECT g.id,r.document->>'title' AS title,g.category,g.summary,g.revision,r.content_hash AS \"contentHash\" FROM guides g JOIN guide_revisions r ON r.guide_id=g.id AND r.revision=g.revision ORDER BY g.id")).rows;
@@ -114,7 +138,7 @@ export function createService(db, { publicationEnabled = false, repository = nul
     async submit(actor, id, input) {
       fields(input, ['expectedVersion', 'summary']); integer(input.expectedVersion);
       const summary = boundedText(input.summary, 1000, 'Summary');
-      return db.transaction(q => submitSavedSnapshot(q, actor, id, input, summary));
+      return db.transaction(q => submitSavedSnapshot(q, actor, id, input, summary, routing));
     },
     async resubmit(actor, id, input) {
       fields(input, ['expectedVersion', 'expectedDraftVersion', 'summary']);
@@ -129,7 +153,7 @@ export function createService(db, { publicationEnabled = false, repository = nul
         const job = (await q.query('SELECT * FROM publication_jobs WHERE submission_id=$1 FOR UPDATE', [id])).rows[0];
         if (job?.provider?.replacementId) {
           const replacement = await submission(q, job.provider.replacementId);
-          if (replacement.owner_id === actor) return submissionView(replacement, user, { detail: true, repository });
+          if (replacement.owner_id === actor) return submissionView(replacement, user, { ...routing, detail: true });
           fail(409, 'already_resubmitted', 'A replacement submission already exists. Open it before making another change.');
         }
         if (!job || job.state !== 'blocked' || !needsFreshReview(job.last_error) || original.version !== input.expectedVersion) fail(409, 'resubmission_conflict', 'Reload this blocked submission before preparing a replacement.');
@@ -143,7 +167,7 @@ export function createService(db, { publicationEnabled = false, repository = nul
         const next = draft.version + 1;
         await q.query('UPDATE drafts SET version=$3,saved_at=now() WHERE owner_id=$1 AND guide_id=$2', [actor, original.guide_id, next]);
         await q.query('INSERT INTO draft_history(owner_id,guide_id,version,base_revision,document,content_hash) VALUES($1,$2,$3,$4,$5,$6)', [actor, original.guide_id, next, draft.base_revision, JSON.stringify(draft.document), documentHash(draft.document)]);
-        const replacement = await submitSavedSnapshot(q, actor, original.guide_id, { expectedVersion: next }, summary);
+        const replacement = await submitSavedSnapshot(q, actor, original.guide_id, { expectedVersion: next }, summary, routing);
         await q.query("UPDATE publication_jobs SET provider=provider || $2::jsonb,updated_at=now() WHERE submission_id=$1", [id, JSON.stringify({ replacementId: replacement.id })]);
         await audit(q, actor, 'submission.resubmitted', id, { replacementId: replacement.id, contentHash: replacement.contentHash });
         return replacement;
@@ -152,13 +176,13 @@ export function createService(db, { publicationEnabled = false, repository = nul
     async listSubmissions(actor, { mine = false } = {}) {
       const user = await requireUser(db, actor);
       const onlyMine = mine || !isReviewer(user);
-      return (await db.query(`SELECT s.*,j.state AS job_state,j.provider AS job_provider,j.last_error AS job_error FROM submissions s LEFT JOIN publication_jobs j ON j.submission_id=s.id ${onlyMine ? 'WHERE s.owner_id=$1' : ''} ORDER BY s.created_at DESC LIMIT 100`, onlyMine ? [actor] : [])).rows.map(row => submissionView(row, user, { repository }));
+      return (await db.query(`SELECT s.*,j.state AS job_state,j.provider AS job_provider,j.last_error AS job_error FROM submissions s LEFT JOIN publication_jobs j ON j.submission_id=s.id ${onlyMine ? 'WHERE s.owner_id=$1' : ''} ORDER BY s.created_at DESC LIMIT 100`, onlyMine ? [actor] : [])).rows.map(row => submissionView(row, user, { ...routing }));
     },
     async getSubmission(actor, id) {
       const user = await requireUser(db, actor);
       const row = await submission(db, id);
       if (row.owner_id !== actor && !isReviewer(user)) fail(404, 'submission_not_found', 'Submission not found.');
-      return submissionView(row, user, { detail: true, repository });
+      return submissionView(row, user, { ...routing, detail: true });
     },
     async review(actor, id, input) {
       fields(input, ['decision', 'expectedVersion', 'note']); integer(input.expectedVersion);
@@ -173,6 +197,7 @@ export function createService(db, { publicationEnabled = false, repository = nul
         if (row.status !== 'submitted' || input.expectedVersion !== row.version) fail(409, 'review_conflict', 'This submission has already changed. Reload it before reviewing.', { submission: submissionView(row, user, { detail: true }) });
         if (input.decision === 'approve') {
           if (!publicationEnabled) fail(503, 'publication_unavailable', 'The publishing connection is not configured yet. This submission remains safely queued for review.');
+          try { await assertPublicationAuthority(q, row, publicationTargets); } catch (error) { destinationFailure(error); }
           if (row.base_revision !== current.revision || row.baseline_hash !== current.content_hash) baselineConflict(current, row.draft_version);
           validate(row.document, current.document);
           if (documentHash(row.document) !== row.content_hash || documentHash(row.baseline_document) !== row.baseline_hash) fail(500, 'snapshot_corrupt', 'The stored review failed its integrity check.');
@@ -183,7 +208,7 @@ export function createService(db, { publicationEnabled = false, repository = nul
           ...(status === 'approved' && row.owner_id === actor ? { reviewerRole: user.role, approvalPolicy: ADMIN_SELF_POLICY, reviewedAt: iso(updated.reviewed_at) } : {}),
         });
         if (status === 'approved') await q.query('INSERT INTO publication_jobs(submission_id) VALUES($1) ON CONFLICT DO NOTHING', [id]);
-        return submissionView(updated, user, { detail: true });
+        return submissionView(updated, user, { ...routing, detail: true });
       });
     },
     async changeRole(actor, id, input) {

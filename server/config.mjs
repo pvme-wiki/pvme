@@ -1,4 +1,5 @@
 import { createPrivateKey } from 'node:crypto';
+import { loadGuideStoreConfig } from './guide-store-config.mjs';
 const baseFields = ['APP_ORIGIN', 'DATABASE_URL', 'SESSION_SECRET', 'DISCORD_CLIENT_ID', 'DISCORD_CLIENT_SECRET'];
 const githubFields = ['GITHUB_APP_ID', 'GITHUB_INSTALLATION_ID', 'GITHUB_APP_PRIVATE_KEY', 'GITHUB_OWNER', 'GITHUB_REPO', 'GITHUB_BASE_BRANCH', 'GITHUB_WEBHOOK_SECRET', 'CRON_SECRET'];
 export function loadConfig(env = process.env) {
@@ -46,15 +47,20 @@ export function loadConfig(env = process.env) {
     /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.vercel\.app$/.test(deploymentHost)
     ? `https://${deploymentHost}` : null;
   const configured = !missing.length && !errors.length;
-  return {
-    configured, errors, missing, accessMode, allowedDiscordIds, origin, productionCronOrigin,
-    databaseUrl: env.DATABASE_URL, sessionSecret: env.SESSION_SECRET,
-    discord: { clientId: env.DISCORD_CLIENT_ID, clientSecret: env.DISCORD_CLIENT_SECRET, redirectUri: `${origin}/api/editor/auth/discord/callback` },
-    github: configured && githubValid ? {
+  const github = configured && githubValid ? {
+      ...( /^[1-9][0-9]*$/.test(env.GITHUB_REPOSITORY_ID || '') && Number.isSafeInteger(Number(env.GITHUB_REPOSITORY_ID)) ? { id: Number(env.GITHUB_REPOSITORY_ID) } : {}),
       appId: env.GITHUB_APP_ID, installationId: env.GITHUB_INSTALLATION_ID,
       privateKey: env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, '\n'), owner: env.GITHUB_OWNER,
       repo: env.GITHUB_REPO, base: env.GITHUB_BASE_BRANCH, webhookSecret: env.GITHUB_WEBHOOK_SECRET,
       cronSecret: env.CRON_SECRET,
-    } : null,
+    } : null;
+  const migration = loadGuideStoreConfig(env, github);
+  return {
+    configured, errors, missing, accessMode, allowedDiscordIds, origin, productionCronOrigin,
+    databaseUrl: env.DATABASE_URL, sessionSecret: env.SESSION_SECRET,
+    discord: { clientId: env.DISCORD_CLIENT_ID, clientSecret: env.DISCORD_CLIENT_SECRET, redirectUri: `${origin}/api/editor/auth/discord/callback` },
+    github, guideStore: migration.config, guideStoreErrors: migration.errors,
+    publicationRoutingEnabled: env.PVME_PUBLICATION_TARGET_ROUTING === 'enabled',
+
   };
 }

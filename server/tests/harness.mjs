@@ -9,7 +9,8 @@ export async function fixture() {
   await pg.exec(await readFile(new URL('../migrations/001_initial.sql', import.meta.url), 'utf8'));
   const db = {
     query: (sql, params = []) => pg.query(sql, params),
-    transaction: fn => pg.transaction(q => fn({ query: (sql, params = []) => q.query(sql, params) })),
+    exec: sql => pg.exec(sql),
+    transaction: fn => pg.transaction(q => fn({ query: (sql, params = []) => q.query(sql, params), exec: sql => q.exec(sql) })),
     close: () => pg.close(),
   };
   await seed(db, { guideIds: ['arch-glacor-basic', 'interface-guide', 'dpm-advice-mage', 'necromancy-upgrade-order', 'low-effort-rasial'] });

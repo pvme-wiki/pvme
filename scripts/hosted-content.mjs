@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { assertDocument, renderDocument, textContent } from '../editor/shared/model.mjs';
+import { publicationProofId } from '../server/publication-proof.mjs';
 import { documentHash } from '../server/core.mjs';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -24,7 +25,7 @@ function jsonFiles(dir) {
     return { name, value: read(file) };
   });
 }
-export function loadHostedContent(root, commit = null) {
+export function loadGuideBaselines(root) {
   const catalog = read(path.join(root, 'editor/content/catalog.json'));
   const baseline = new Map(catalog.map(item => {
     if (!/^[a-z0-9][a-z0-9-]{0,100}$/.test(item.id) || item.file !== `${item.id}.json`) throw Error('Invalid editor catalog');
@@ -32,15 +33,29 @@ export function loadHostedContent(root, commit = null) {
     if (doc.id !== item.id) throw Error('Catalog/document mismatch');
     return [item.id, doc];
   }));
+  return baseline;
+}
+export function loadHostedContent(root, commit = null, { guideStore = null } = {}) {
+  const baseline = loadGuideBaselines(root);
   const receipts = jsonFiles(path.join(root, 'content/reviews')).map(({ name, value: r }) => {
     if (!validApprovalShape(r) || !UUID.test(r.submissionId || '') || name !== `${r.submissionId}.json` ||
         !baseline.has(r.guideId) || !HASH.test(r.contentHash || '') || !HASH.test(r.baselineHash || '') ||
         !Number.isSafeInteger(r.baseRevision) || r.baseRevision < 1 || !Number.isSafeInteger(r.draftVersion) || r.draftVersion < 1 ||
-        !Number.isFinite(Date.parse(r.approvedAt)) || !UUID.test(r.contributorId || '') || !UUID.test(r.reviewerId || '')) throw Error(`Invalid approval receipt: ${name}`);
+        !Number.isFinite(Date.parse(r.approvedAt)) || !UUID.test(r.contributorId || '') || !UUID.test(r.reviewerId || '')) throw Error('Invalid approval receipt file');
     return r;
   });
+  const activeIds = new Set(guideStore?.pin.mode === 'active' ? guideStore.pin.guideIds : []);
+  if ([...activeIds].some(id => !baseline.has(id))) throw Error('Unknown migrated guide authority');
+  // Legacy guides remain app-owned until their explicit per-guide handoff.
+  // Receipts always remain in the app repository, including migrated guides.
+  const documents = new Map(jsonFiles(path.join(root, 'content/guides')).map(({name, value}) => [name, value]));
+  for (const id of activeIds) {
+    const remote = guideStore.guides.get(id);
+    if (remote) documents.set(`${id}.json`, remote.document);
+    else documents.delete(`${id}.json`);
+  }
   const published = new Map();
-  for (const { name, value: doc } of jsonFiles(path.join(root, 'content/guides'))) {
+  for (const [name, doc] of documents) {
     const original = baseline.get(doc.id);
     if (!original || name !== `${doc.id}.json`) throw Error(`Unknown approved guide: ${name}`);
     assertDocument(doc, { baseline: original });
@@ -64,16 +79,27 @@ export function loadHostedContent(root, commit = null) {
       revision++;
     }
     if (contentHash !== previousHash) throw Error(`Approved guide has no matching review receipt at the latest revision: ${name}`);
+    if (activeIds.has(doc.id)) {
+      const remote = guideStore.guides.get(doc.id);
+      if (remote.revision !== revision || remote.baselineHash !== receipt.baselineHash || remote.contentHash !== contentHash) throw Error(`Pinned guide revision differs from its private approval lineage: ${name}`);
+    }
     published.set(doc.id, { document: doc, contentHash, receipt, html: renderDocument(doc) });
   }
   for (const receipt of receipts) {
-    if (!published.has(receipt.guideId)) throw Error(`Approval receipt has no guide: ${receipt.submissionId}`);
+    if (!published.has(receipt.guideId)) throw Error('Approval receipt has no guide');
   }
   const pilotBySource = new Map([...baseline.values()].map(doc => [doc.source.sourcePath, doc.id]));
   const bySource = new Map([...published.values()].map(item => [item.document.source.sourcePath, item]));
   const release = { commit: /^[0-9a-f]{40}$/.test(commit || '') ? commit : null, guides: {} };
-  for (const [id, { contentHash, receipt }] of published) release.guides[id] = { submissionId: receipt.submissionId, contentHash };
-  return { baseline, published, bySource, pilotBySource, release };
+  if (guideStore?.pin.mode === 'active') {
+    release.schemaVersion = 2;
+    release.appCommit = release.commit;
+    release.contentCommit = guideStore.pin.contentCommit;
+    release.contentOrigin = guideStore.pin.origin;
+    if (!release.appCommit) throw Error('Pinned guide publication requires an immutable app commit');
+  }
+  for (const [id, { contentHash, receipt }] of published) release.guides[id] = release.schemaVersion === 2 ? { proofId: publicationProofId(receipt), contentHash } : { submissionId: receipt.submissionId, contentHash };
+  return { baseline, published, bySource, pilotBySource, release, ...(guideStore ? { guideStore } : {}) };
 }
 export function documentText(document) {
   return document.blocks.map(textContent).join(' ').replace(/\s+/g, ' ').trim();

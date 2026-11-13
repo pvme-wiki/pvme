@@ -585,3 +585,42 @@ for (const scenario of [
     assert.equal(unchanged.contentHash, documentHash(submitted));
   });
 }
+
+test('bridge phase details stay truthful for contributors and keep private review links out of rendered HTML', async () => {
+  for (const phase of ['content_review', 'website_update', 'deployment']) {
+    const review = { ...publicationReview('publishing'), isMine: true, publication: { pipeline: 'content-pin-v1', phase, state: 'awaiting_deployment', contentReviewUrl: 'https://github.com/private-guides/content/pull/7', websiteReviewUrl: 'https://github.com/private-owner/app/pull/9' } };
+    const before = clone(review);
+    const h = await publicationHarness({ review, identity: session });
+    await h.renderRoute();
+    assert.match(h.app.innerHTML, new RegExp(workflow.submissionStatus(review.status, review.publication)[0]));
+    assert.doesNotMatch(h.app.innerHTML, /github.com\/private|View content pull request|View website update|data-action="check-publication"|Prepare corrected submission/);
+    assert.match(h.app.innerHTML, /Continue my draft/);
+    assert.equal(h.checks(), 0);
+    assert.deepEqual(review, before);
+  }
+});
+test('moderator bridge details show separately named safe review destinations', async () => {
+  const review = { ...publicationReview('publishing'), publication: { pipeline: 'content-pin-v1', phase: 'website_update', state: 'awaiting_deployment', contentReviewUrl: 'https://github.com/pvme-wiki/guides/pull/7', websiteReviewUrl: 'https://github.com/owner/app/pull/9' } };
+  const h = await publicationHarness({ review });
+  await h.renderRoute();
+  assert.match(h.app.innerHTML, /href="https:\/\/github.com\/pvme-wiki\/guides\/pull\/7"[^>]*>View content pull request/);
+  assert.match(h.app.innerHTML, /href="https:\/\/github.com\/owner\/app\/pull\/9"[^>]*>View website update/);
+  assert.doesNotMatch(h.app.innerHTML, /If the pull request changes, update a saved draft/);
+  assert.equal(h.checks(), 1);
+});
+test('bridge publication status reads leave a later draft untouched', async () => {
+  for (const phase of ['content_review', 'website_update', 'deployment', 'live']) {
+    const terminal = phase === 'live';
+    const review = { ...publicationReview(terminal ? 'published' : 'publishing'), isMine: true, publication: { pipeline: 'content-pin-v1', phase, state: terminal ? 'published' : 'awaiting_deployment' } };
+    const h = await publicationHarness({ review, identity: session });
+    dirty(h, 'Later unsubmitted wording');
+    const document = clone(h.state.document), baseline = clone(h.state.baseline);
+    await h.renderRoute();
+    assert.deepEqual(h.state.document, document);
+    assert.deepEqual(h.state.baseline, baseline);
+    assert.equal(h.state.dirty, true);
+    assert.equal(h.state.editVersion, 1);
+    assert.equal(h.state.activeReview.document.blocks.length, seed.blocks.length);
+    assert.doesNotMatch(h.app.innerHTML, /Later unsubmitted wording/);
+  }
+});

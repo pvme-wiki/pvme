@@ -6,14 +6,31 @@ import { createDatabase } from './db.mjs';
 import { documentHash, boundedText, HOSTED_DOCUMENT_LIMIT_BYTES } from './core.mjs';
 import { validateDocument } from '../editor/shared/model.mjs';
 import { audit } from './service.mjs';
+import { validatePublicationTarget, samePublicationTarget } from './publication-targets.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export async function migrate(db) {
+export async function migrate(db, { legacyTarget } = {}) {
+  const target = legacyTarget ? validatePublicationTarget(legacyTarget) : null;
+  if (target && target.pipeline !== 'legacy-v1') throw Error('Migration requires the original legacy destination.');
+  const migrations = ['001_initial.sql', '002_publication_targets.sql'];
+  const sources = await Promise.all(migrations.map(name => readFile(path.join(ROOT, 'server/migrations', name), 'utf8')));
   return db.transaction(async q => {
     await q.query('SELECT pg_advisory_xact_lock(1844674407)');
     const existing = (await q.query("SELECT to_regclass('public.schema_migrations') AS name")).rows[0].name;
-    if (existing && (await q.query('SELECT version FROM schema_migrations WHERE version=1')).rows.length) return { applied: false };
-    await q.query(await readFile(path.join(ROOT, 'server/migrations/001_initial.sql'), 'utf8'));
-    return { applied: true };
+    const applied = new Set(existing ? (await q.query('SELECT version FROM schema_migrations')).rows.map(row => row.version) : []);
+    if (target && applied.has(2)) {
+      const original = (await q.query('SELECT legacy_target FROM publication_migration_settings WHERE singleton=true')).rows[0]?.legacy_target;
+      if (original && !samePublicationTarget(original, target)) throw Error('The migration legacy destination differs from the immutable original.');
+    }
+    const versions = [];
+    for (let i = 0; i < migrations.length; i++) {
+      const version = i + 1;
+      if (applied.has(version)) continue;
+      if (version === 2 && target) await q.query("SELECT set_config('pvme.legacy_publication_target',$1,true)", [JSON.stringify(target)]);
+      if (typeof q.exec === 'function') await q.exec(sources[i]);
+      else await q.query(sources[i]);
+      versions.push(version);
+    }
+    return { applied: versions.length > 0, versions };
   });
 }
 export async function loadSeedDocuments({ contentRoot = path.join(ROOT, 'editor/content'), guideIds = null } = {}) {
@@ -72,7 +89,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     const db = createDatabase({ databaseUrl: url });
     try {
       const [action, ...args] = process.argv.slice(2);
-      const result = action === 'migrate' ? await migrate(db) : action === 'seed' ? await seed(db) : action === 'grant-role' ? await grantRole(db, args[0], args[1], args.slice(2).join(' ')) : null;
+      const result = action === 'migrate' ? await migrate(db, { legacyTarget: process.env.MIGRATION_LEGACY_TARGET_JSON ? JSON.parse(process.env.MIGRATION_LEGACY_TARGET_JSON) : undefined }) : action === 'seed' ? await seed(db) : action === 'grant-role' ? await grantRole(db, args[0], args[1], args.slice(2).join(' ')) : null;
       if (!result) throw Error('Choose migrate, seed, or grant-role.');
       process.stdout.write(`${JSON.stringify(result)}\n`);
     } catch {

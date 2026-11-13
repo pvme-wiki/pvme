@@ -5,7 +5,8 @@
   "outputDirectory": "dist",
   "functions": {
     "api/editor.mjs": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "editor/content/*.json"
     }
   },
   "rewrites": [
